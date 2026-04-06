@@ -61,11 +61,16 @@ dist/
       ...
 ```
 
+## Branch structure
+
+- **`main`** — Source code: Python scripts, robot catalog (`robots.yaml`), CI workflow
+- **`dist`** — Build output only: processed GLB meshes, rewritten URDFs, `manifest.json`. This branch is force-pushed by CI on each release. Binary assets are kept off `main` to avoid bloating clones.
+
 ## CDN URLs
 
-After a tagged release, models are available at:
+jsDelivr serves files from the `dist` branch via tagged versions. After a tagged release, models are available at:
 
 ```
-https://cdn.jsdelivr.net/gh/ferrolho/robot-viewer-models@v0.1.0/dist/manifest.json
-https://cdn.jsdelivr.net/gh/ferrolho/robot-viewer-models@v0.1.0/dist/models/{id}/robot.urdf
+https://cdn.jsdelivr.net/gh/ferrolho/robot-viewer-models@v0.1.0/manifest.json
+https://cdn.jsdelivr.net/gh/ferrolho/robot-viewer-models@v0.1.0/models/{id}/robot_{lod}.urdf
 ```

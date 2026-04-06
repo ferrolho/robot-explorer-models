@@ -1,26 +1,15 @@
 # robot-viewer-models
 
-Pipeline to process URDF robot descriptions into web-optimized GLB meshes for [robot-viewer](https://github.com/ferrolho/robot-viewer).
-
-## Why GLB?
-
-Upstream URDF models reference meshes in formats like STL, DAE (COLLADA), and OBJ. These are not ideal for web delivery:
-
-- **STL** has no compression and no material/color data
-- **DAE (COLLADA)** is XML-based (verbose) and poorly supported by modern web 3D tooling
-- **OBJ** is text-based and requires separate material files
-
-**GLB** (binary glTF) is the web-native 3D format — compact binary encoding, supported by Three.js and all major browsers, and can be further compressed with [Draco](https://google.github.io/draco/). Converting upstream meshes to GLB with mesh decimation typically reduces file sizes by 5-10x while preserving visual quality.
+Pipeline to process URDF robot descriptions for [robot-viewer](https://github.com/ferrolho/robot-viewer). Currently serves 67 robots from the [robot_descriptions](https://github.com/robot-descriptions/robot_descriptions.py) ecosystem.
 
 ## How it works
 
 1. Pulls URDF descriptions from upstream repos via [robot_descriptions](https://github.com/robot-descriptions/robot_descriptions.py)
-2. Decimates meshes to multiple LODs using [trimesh](https://trimesh.org/)
-3. Converts meshes to GLB (binary glTF), optionally with [Draco compression](https://github.com/donmccurdy/glTF-Transform)
-4. Rewrites URDF mesh references to point to the processed GLB files
-5. Generates a `manifest.json` with model metadata
+2. Copies original mesh files (STL, DAE, OBJ) alongside textures to preserve materials
+3. Rewrites URDF mesh references to relative paths
+4. Generates a `manifest.json` with model metadata
 
-Output is published as GitHub Releases and served via [jsDelivr CDN](https://www.jsdelivr.com/).
+Output is served via [jsDelivr CDN](https://www.jsdelivr.com/).
 
 ## Usage
 
@@ -30,12 +19,6 @@ Output is published as GitHub Releases and served via [jsDelivr CDN](https://www
 python -m venv .venv
 source .venv/bin/activate
 pip install -e .
-```
-
-Optionally install `gltf-transform` CLI for Draco compression:
-
-```bash
-npm install -g @gltf-transform/cli
 ```
 
 ### Process models
@@ -59,28 +42,33 @@ dist/
     universal_robot_ur5/
       robot.urdf
       meshes/
-        low/
-          base_link.glb
-          shoulder_link.glb
-          ...
-        medium/
-          base_link.glb
-          shoulder_link.glb
-          ...
+        base.dae
+        shoulder.dae
+        ...
     franka_panda/
-      ...
+      robot.urdf
+      meshes/
+        link0.dae
+        link1.dae
+        ...
 ```
 
 ## Branch structure
 
 - **`main`** — Source code: Python scripts, robot catalog (`robots.yaml`), CI workflow
-- **`dist`** — Build output only: processed GLB meshes, rewritten URDFs, `manifest.json`. This branch is force-pushed by CI on each release. Binary assets are kept off `main` to avoid bloating clones.
+- **`dist`** — Build output only: processed meshes, rewritten URDFs, `manifest.json`. This branch is force-pushed by CI on each release. Binary assets are kept off `main` to avoid bloating clones.
 
 ## CDN URLs
 
-jsDelivr serves files from the `dist` branch via tagged versions. After a tagged release, models are available at:
+jsDelivr serves files from the `dist` branch:
 
 ```
-https://cdn.jsdelivr.net/gh/ferrolho/robot-viewer-models@v0.1.0/manifest.json
-https://cdn.jsdelivr.net/gh/ferrolho/robot-viewer-models@v0.1.0/models/{id}/robot_{lod}.urdf
+https://cdn.jsdelivr.net/gh/ferrolho/robot-viewer-models@dist/manifest.json
+https://cdn.jsdelivr.net/gh/ferrolho/robot-viewer-models@dist/models/{id}/robot.urdf
 ```
+
+## Roadmap
+
+- **GLB conversion with material preservation**: The pipeline currently copies original mesh files (STL, DAE, OBJ) to preserve materials and textures. A future improvement is to convert these to GLB (binary glTF) using a tool that preserves materials (e.g., Blender headless or `assimp`), enabling Draco compression and significantly smaller download sizes (5-10x reduction). This would also allow multi-LOD support (low/medium/high mesh detail).
+- **Expand catalog**: Add remaining robots from robot_descriptions as they become available with valid URDFs.
+- **Automated validation**: CI step to verify each model loads correctly in a headless Three.js/urdf-loader environment.

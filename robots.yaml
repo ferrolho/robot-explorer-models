@@ -622,3 +622,188 @@ robots:
   - link06
   dof: 6
 
+# ── ABB (from ros-industrial/abb, xacro-based) ──
+
+- id: abb_irb120
+  brand: ABB
+  name: IRB 120-3/0.6
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 0.58
+  weight: 25
+  payload: 3
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb120_support
+  xacro: abb_irb120_support/urdf/irb120_3_58.xacro
+
+- id: abb_irb1200
+  brand: ABB
+  name: IRB 1200-5/0.9
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 0.901
+  weight: 54
+  payload: 5
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb1200_support
+  xacro: abb_irb1200_support/urdf/irb1200_5_90.xacro
+
+- id: abb_irb1600
+  brand: ABB
+  name: IRB 1600-6/1.2
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 1.2
+  weight: 250
+  payload: 6
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb1600_support
+  xacro: abb_irb1600_support/urdf/irb1600_6_12.xacro
+
+- id: abb_irb2400
+  brand: ABB
+  name: IRB 2400/10
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 1.55
+  weight: 380
+  payload: 12
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb2400_support
+  xacro: abb_irb2400_support/urdf/irb2400_12_155.xacro
+
+- id: abb_irb2600
+  brand: ABB
+  name: IRB 2600-12/1.65
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 1.65
+  weight: 272
+  payload: 12
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb2600_support
+  xacro: abb_irb2600_support/urdf/irb2600_12_165.xacro
+
+- id: abb_irb4400
+  brand: ABB
+  name: IRB 4400L/10
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 2.53
+  weight: 1040
+  payload: 10
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb4400_support
+  xacro: abb_irb4400_support/urdf/irb4400l_30_243.xacro
+
+- id: abb_irb4600
+  brand: ABB
+  name: IRB 4600-60/2.05
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 2.05
+  weight: 425
+  payload: 60
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb4600_support
+  xacro: abb_irb4600_support/urdf/irb4600_60_205.xacro
+
+- id: abb_irb5400
+  brand: ABB
+  name: IRB 5400
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 3.129
+  weight: 970
+  payload: 25
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb5400_support
+  xacro: abb_irb5400_support/urdf/irb5400.xacro
+
+- id: abb_irb6640
+  brand: ABB
+  name: IRB 6640-235
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 2.55
+  weight: 1310
+  payload: 235
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb6640_support
+  xacro: abb_irb6640_support/urdf/irb6640_185_280.xacro
+
+- id: abb_irb7600
+  brand: ABB
+  name: IRB 7600-150/3.5
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 3.5
+  weight: 2450
+  payload: 150
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb7600_support
+  xacro: abb_irb7600_support/urdf/irb7600_150_350.xacro
+
+# ── KUKA KR series (from ros-industrial/kuka_experimental) ──
+
+- id: kuka_kr5_arc
+  brand: KUKA
+  name: KR 5 arc
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 1.412
+  weight: 127
+  payload: 5
+  git_repo: {url: "https://github.com/ros-industrial/kuka_experimental.git", branch: melodic-devel, name: kuka_experimental}
+  package: kuka_kr5_support
+  xacro: kuka_kr5_support/urdf/kr5_arc.xacro
+
+- id: kuka_kr10r1100sixx
+  brand: KUKA
+  name: KR 10 R1100 sixx
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 1.101
+  weight: 55
+  payload: 10
+  git_repo: {url: "https://github.com/ros-industrial/kuka_experimental.git", branch: melodic-devel, name: kuka_experimental}
+  package: kuka_kr10_support
+  xacro: kuka_kr10_support/urdf/kr10r1100sixx.xacro
+
+- id: kuka_kr16_2
+  brand: KUKA
+  name: KR 16-2
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 1.611
+  weight: 235
+  payload: 16
+  git_repo: {url: "https://github.com/ros-industrial/kuka_experimental.git", branch: melodic-devel, name: kuka_experimental}
+  package: kuka_kr16_support
+  urdf: kuka_kr16_support/urdf/kr16_2.urdf
+
+- id: kuka_kr120r2500pro
+  brand: KUKA
+  name: KR 120 R2500 pro
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 2.496
+  weight: 1049
+  payload: 120
+  git_repo: {url: "https://github.com/ros-industrial/kuka_experimental.git", branch: melodic-devel, name: kuka_experimental}
+  package: kuka_kr120_support
+  urdf: kuka_kr120_support/urdf/kr120r2500pro.urdf

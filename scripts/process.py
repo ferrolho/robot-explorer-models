@@ -12,6 +12,7 @@ For each robot in robots.yaml:
 import importlib
 import json
 import shutil
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 from xml.etree import ElementTree as ET
@@ -33,6 +34,30 @@ def get_description_paths(module_name: str) -> tuple[Path, Path, Path]:
     """Import a robot_descriptions module and return (URDF_PATH, PACKAGE_PATH, REPOSITORY_PATH)."""
     mod = importlib.import_module(f"robot_descriptions.{module_name}")
     return Path(mod.URDF_PATH), Path(mod.PACKAGE_PATH), Path(mod.REPOSITORY_PATH)
+
+
+def clone_repo(url: str, branch: str, name: str) -> Path:
+    """Clone a git repo to the robot_descriptions cache. Returns the repo path."""
+    cache = Path.home() / ".cache" / "robot_descriptions" / name
+    if not cache.exists():
+        subprocess.run(
+            ["git", "clone", "--depth", "1", "-b", branch, url, str(cache)],
+            capture_output=True, check=True,
+        )
+    return cache
+
+
+def render_xacro(repo_dir: Path, xacro_rel_path: str, output_path: Path) -> bool:
+    """Render a xacro file to URDF using the ROS Noetic Docker container."""
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    result = subprocess.run(
+        [str(ROOT / "scripts" / "render_xacro.sh"), str(repo_dir), xacro_rel_path, str(output_path)],
+        capture_output=True, text=True,
+    )
+    if result.returncode != 0:
+        print(f"  ERROR: xacro rendering failed: {result.stderr[:200]}")
+        return False
+    return output_path.exists() and output_path.stat().st_size > 0
 
 
 def find_mesh_references(urdf_path: Path) -> list[tuple[ET.Element, str]]:
@@ -108,20 +133,42 @@ def process_robot(robot: dict) -> dict | None:
     Copies original mesh files to preserve materials/textures/colors.
     """
     robot_id = robot["id"]
-    module_name = robot["module"]
+    module_name = robot.get("module")
 
     print(f"\n{'='*60}")
     print(f"Processing: {robot['brand']} {robot['name']} ({robot_id})")
-    print(f"  Module: {module_name}")
 
-    # Step 1: Get paths from robot_descriptions
-    try:
-        urdf_path, package_path, repo_path = get_description_paths(module_name)
-    except Exception as e:
-        print(f"  ERROR: Failed to import {module_name}: {e}")
-        return None
+    # Step 1: Get URDF path — either from robot_descriptions or from a git repo + xacro
+    if "git_repo" in robot:
+        # Clone the repo and render xacro to URDF
+        repo_info = robot["git_repo"]
+        repo_path = clone_repo(repo_info["url"], repo_info["branch"], repo_info["name"])
+        package_path = repo_path / robot.get("package", "")
 
-    print(f"  URDF: {urdf_path}")
+        if "xacro" in robot:
+            # Render xacro via Docker
+            xacro_rel = robot["xacro"]
+            print(f"  Xacro: {xacro_rel}")
+            tmp_urdf = DIST / "tmp" / f"{robot_id}.urdf"
+            if not render_xacro(repo_path, xacro_rel, tmp_urdf):
+                return None
+            urdf_path = tmp_urdf
+        elif "urdf" in robot:
+            urdf_path = repo_path / robot["urdf"]
+        else:
+            print(f"  ERROR: git_repo entry needs 'xacro' or 'urdf' field")
+            return None
+
+        print(f"  URDF: {urdf_path}")
+    else:
+        # Use robot_descriptions Python package
+        print(f"  Module: {module_name}")
+        try:
+            urdf_path, package_path, repo_path = get_description_paths(module_name)
+        except Exception as e:
+            print(f"  ERROR: Failed to import {module_name}: {e}")
+            return None
+        print(f"  URDF: {urdf_path}")
 
     if not urdf_path.exists():
         print(f"  ERROR: URDF file does not exist")
@@ -199,7 +246,7 @@ def process_robot(robot: dict) -> dict | None:
         "tipLinks": robot["tipLinks"],
         "category": robot.get("category", "arm"),
         "dof": actual_dof,
-        "upstream": module_name,
+        "upstream": module_name or robot.get("git_repo", {}).get("name", ""),
         "urdf": f"models/{robot_id}/robot.urdf",
     }
 

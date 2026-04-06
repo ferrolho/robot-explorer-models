@@ -67,6 +67,10 @@ https://cdn.jsdelivr.net/gh/ferrolho/robot-viewer-models@dist/manifest.json
 https://cdn.jsdelivr.net/gh/ferrolho/robot-viewer-models@dist/models/{id}/robot.urdf
 ```
 
+## Acknowledgments
+
+This project builds on top of [robot_descriptions.py](https://github.com/robot-descriptions/robot_descriptions.py) by Stéphane Caron and contributors, which provides a unified Python interface to 179+ robot descriptions from the robotics community. All robot models are sourced from their respective upstream repositories — this pipeline simply repackages them for web delivery.
+
 ## Roadmap
 
 - **GLB conversion with material preservation**: The pipeline currently copies original mesh files (STL, DAE, OBJ) to preserve materials and textures. A future improvement is to convert these to GLB (binary glTF) using a tool that preserves materials (e.g., Blender headless or `assimp`), enabling Draco compression and significantly smaller download sizes (5-10x reduction). This would also allow multi-LOD support (low/medium/high mesh detail).

@@ -21,13 +21,19 @@ source .venv/bin/activate
 pip install -e .
 ```
 
+Some robots (ABB, KUKA) use ROS xacro files that require a ROS Noetic Docker container to render:
+
+```bash
+docker pull ros:noetic-ros-core
+```
+
 ### Process models
 
 ```bash
 python -m scripts.process
 ```
 
-Output goes to `dist/`.
+Output goes to `dist/`. Robots sourced from `robot_descriptions` are processed directly. Robots with xacro files are rendered via Docker automatically.
 
 ### Configuration
 

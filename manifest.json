@@ -1,0 +1,276 @@
+{
+  "version": 1,
+  "generated": "2026-04-06T19:04:07.250138+00:00",
+  "models": [
+    {
+      "id": "universal_robot_ur3",
+      "brand": "Universal Robots",
+      "name": "UR3",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "lods": [
+        "low",
+        "medium"
+      ],
+      "dof": 6,
+      "upstream": "ur3_description",
+      "reach": 0.5,
+      "weight": 15,
+      "payload": 3,
+      "productPage": "https://www.universal-robots.com/products/ur3-robot/",
+      "urdfs": {
+        "low": "models/universal_robot_ur3/robot_low.urdf",
+        "medium": "models/universal_robot_ur3/robot_medium.urdf"
+      }
+    },
+    {
+      "id": "universal_robot_ur5",
+      "brand": "Universal Robots",
+      "name": "UR5",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "lods": [
+        "low",
+        "medium"
+      ],
+      "dof": 6,
+      "upstream": "ur5_description",
+      "reach": 0.85,
+      "weight": 15,
+      "payload": 5,
+      "productPage": "https://www.universal-robots.com/products/ur5-robot/",
+      "urdfs": {
+        "low": "models/universal_robot_ur5/robot_low.urdf",
+        "medium": "models/universal_robot_ur5/robot_medium.urdf"
+      }
+    },
+    {
+      "id": "universal_robot_ur10",
+      "brand": "Universal Robots",
+      "name": "UR10",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "lods": [
+        "low",
+        "medium"
+      ],
+      "dof": 6,
+      "upstream": "ur10_description",
+      "reach": 1.3,
+      "weight": 17,
+      "payload": 10,
+      "productPage": "https://www.universal-robots.com/products/ur10-robot/",
+      "urdfs": {
+        "low": "models/universal_robot_ur10/robot_low.urdf",
+        "medium": "models/universal_robot_ur10/robot_medium.urdf"
+      }
+    },
+    {
+      "id": "kuka_lbr_iiwa_14_r820",
+      "brand": "KUKA",
+      "name": "LBR iiwa 14 R820",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "lods": [
+        "low",
+        "medium"
+      ],
+      "dof": 7,
+      "upstream": "iiwa14_description",
+      "reach": 0.82,
+      "weight": 30,
+      "payload": 14,
+      "productPage": "https://www.kuka.com/en-gb/products/robotics-systems/industrial-robots/lbr-iiwa",
+      "urdfs": {
+        "low": "models/kuka_lbr_iiwa_14_r820/robot_low.urdf",
+        "medium": "models/kuka_lbr_iiwa_14_r820/robot_medium.urdf"
+      }
+    },
+    {
+      "id": "franka_panda",
+      "brand": "Franka",
+      "name": "Panda",
+      "tipLinks": [
+        "panda_hand"
+      ],
+      "category": "arm",
+      "lods": [
+        "low",
+        "medium"
+      ],
+      "dof": 9,
+      "upstream": "panda_description",
+      "reach": 0.855,
+      "weight": 18,
+      "payload": 3,
+      "productPage": "https://www.franka.de/",
+      "urdfs": {
+        "low": "models/franka_panda/robot_low.urdf",
+        "medium": "models/franka_panda/robot_medium.urdf"
+      }
+    },
+    {
+      "id": "anybotics_anymal_c",
+      "brand": "ANYbotics",
+      "name": "ANYmal C",
+      "tipLinks": [
+        "LF_FOOT",
+        "RF_FOOT",
+        "LH_FOOT",
+        "RH_FOOT"
+      ],
+      "category": "quadruped",
+      "lods": [
+        "low",
+        "medium"
+      ],
+      "dof": 12,
+      "upstream": "anymal_c_description",
+      "weight": 50,
+      "payload": 10,
+      "urdfs": {
+        "low": "models/anybotics_anymal_c/robot_low.urdf",
+        "medium": "models/anybotics_anymal_c/robot_medium.urdf"
+      }
+    },
+    {
+      "id": "iit_hyq",
+      "brand": "iit",
+      "name": "HyQ",
+      "tipLinks": [
+        "lf_foot",
+        "rf_foot",
+        "lh_foot",
+        "rh_foot"
+      ],
+      "category": "quadruped",
+      "lods": [
+        "low",
+        "medium"
+      ],
+      "dof": 12,
+      "upstream": "hyq_description",
+      "weight": 80,
+      "urdfs": {
+        "low": "models/iit_hyq/robot_low.urdf",
+        "medium": "models/iit_hyq/robot_medium.urdf"
+      }
+    },
+    {
+      "id": "iit_icub",
+      "brand": "iit",
+      "name": "iCub",
+      "tipLinks": [
+        "l_hand",
+        "r_hand"
+      ],
+      "category": "humanoid",
+      "lods": [
+        "low",
+        "medium"
+      ],
+      "dof": 32,
+      "upstream": "icub_description",
+      "urdfs": {
+        "low": "models/iit_icub/robot_low.urdf",
+        "medium": "models/iit_icub/robot_medium.urdf"
+      }
+    },
+    {
+      "id": "kawada_nextage",
+      "brand": "KAWADA",
+      "name": "NEXTAGE (HiroNX)",
+      "tipLinks": [
+        "LHAND_JOINT0_Link",
+        "RHAND_JOINT0_Link"
+      ],
+      "category": "dual_arm",
+      "lods": [
+        "low",
+        "medium"
+      ],
+      "dof": 15,
+      "upstream": "nextage_description",
+      "urdfs": {
+        "low": "models/kawada_nextage/robot_low.urdf",
+        "medium": "models/kawada_nextage/robot_medium.urdf"
+      }
+    },
+    {
+      "id": "nasa_valkyrie",
+      "brand": "NASA",
+      "name": "Valkyrie",
+      "tipLinks": [
+        "leftPalm",
+        "rightPalm",
+        "leftFoot",
+        "rightFoot"
+      ],
+      "category": "humanoid",
+      "lods": [
+        "low",
+        "medium"
+      ],
+      "dof": 60,
+      "upstream": "valkyrie_description",
+      "weight": 136,
+      "urdfs": {
+        "low": "models/nasa_valkyrie/robot_low.urdf",
+        "medium": "models/nasa_valkyrie/robot_medium.urdf"
+      }
+    },
+    {
+      "id": "pal_robotics_talos",
+      "brand": "PAL Robotics",
+      "name": "TALOS",
+      "tipLinks": [
+        "wrist_left_ft_tool_link",
+        "wrist_right_ft_tool_link",
+        "left_sole_link",
+        "right_sole_link"
+      ],
+      "category": "humanoid",
+      "lods": [
+        "low",
+        "medium"
+      ],
+      "dof": 44,
+      "upstream": "talos_description",
+      "weight": 95,
+      "productPage": "https://pal-robotics.com/en/products/talos/",
+      "urdfs": {
+        "low": "models/pal_robotics_talos/robot_low.urdf",
+        "medium": "models/pal_robotics_talos/robot_medium.urdf"
+      }
+    },
+    {
+      "id": "pal_robotics_tiago",
+      "brand": "PAL Robotics",
+      "name": "TIAGo",
+      "tipLinks": [
+        "wrist_ft_tool_link"
+      ],
+      "category": "mobile",
+      "lods": [
+        "low",
+        "medium"
+      ],
+      "dof": 48,
+      "upstream": "tiago_description",
+      "weight": 70,
+      "productPage": "https://tiago.pal-robotics.com/",
+      "urdfs": {
+        "low": "models/pal_robotics_tiago/robot_low.urdf",
+        "medium": "models/pal_robotics_tiago/robot_medium.urdf"
+      }
+    }
+  ]
+}

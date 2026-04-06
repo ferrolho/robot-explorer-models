@@ -1,6 +1,6 @@
 # robot-viewer-models
 
-Pipeline to process URDF robot descriptions for [robot-viewer](https://github.com/ferrolho/robot-viewer). Currently serves 67 robots from the [robot_descriptions](https://github.com/robot-descriptions/robot_descriptions.py) ecosystem.
+Pipeline to process URDF robot descriptions for [robot-viewer](https://github.com/ferrolho/robot-viewer). Currently serves 81 robots from 35+ brands, sourced from [robot_descriptions](https://github.com/robot-descriptions/robot_descriptions.py) and [ROS-Industrial](https://github.com/ros-industrial) packages.
 
 ## How it works
 
@@ -80,5 +80,6 @@ This project builds on top of [robot_descriptions.py](https://github.com/robot-d
 ## Roadmap
 
 - **GLB conversion with material preservation**: The pipeline currently copies original mesh files (STL, DAE, OBJ) to preserve materials and textures. A future improvement is to convert these to GLB (binary glTF) using a tool that preserves materials (e.g., Blender headless or `assimp`), enabling Draco compression and significantly smaller download sizes (5-10x reduction). This would also allow multi-LOD support (low/medium/high mesh detail).
-- **Expand catalog**: Add remaining robots from robot_descriptions as they become available with valid URDFs.
+- **Expand catalog**: 5 robots currently fail processing (Fetch has invalid URDF XML; iiwa7, Mini Cheetah, Sigmaban, Skydio X2 have unresolvable mesh paths). Fix these as upstream descriptions are updated.
 - **Automated validation**: CI step to verify each model loads correctly in a headless Three.js/urdf-loader environment.
+- **CI pipeline**: Automate the full build (including Docker xacro rendering) in GitHub Actions so releases can be cut without local processing.

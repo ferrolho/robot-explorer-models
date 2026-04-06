@@ -128,7 +128,11 @@ def process_robot(robot: dict) -> dict | None:
         return None
 
     # Step 2: Find all mesh references (visual + collision)
-    refs = find_mesh_references(urdf_path)
+    try:
+        refs = find_mesh_references(urdf_path)
+    except ET.ParseError as e:
+        print(f"  ERROR: Failed to parse URDF XML: {e}")
+        return None
     print(f"  Found {len(refs)} mesh references")
 
     # Step 3: Resolve and copy mesh files

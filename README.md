@@ -2,6 +2,16 @@
 
 Pipeline to process URDF robot descriptions into web-optimized GLB meshes for [robot-viewer](https://github.com/ferrolho/robot-viewer).
 
+## Why GLB?
+
+Upstream URDF models reference meshes in formats like STL, DAE (COLLADA), and OBJ. These are not ideal for web delivery:
+
+- **STL** has no compression and no material/color data
+- **DAE (COLLADA)** is XML-based (verbose) and poorly supported by modern web 3D tooling
+- **OBJ** is text-based and requires separate material files
+
+**GLB** (binary glTF) is the web-native 3D format — compact binary encoding, supported by Three.js and all major browsers, and can be further compressed with [Draco](https://google.github.io/draco/). Converting upstream meshes to GLB with mesh decimation typically reduces file sizes by 5-10x while preserving visual quality.
+
 ## How it works
 
 1. Pulls URDF descriptions from upstream repos via [robot_descriptions](https://github.com/robot-descriptions/robot_descriptions.py)

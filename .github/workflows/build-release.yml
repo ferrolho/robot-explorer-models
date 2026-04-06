@@ -1,0 +1,59 @@
+name: Build and Release Models
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Python dependencies
+        run: pip install -e .
+
+      - name: Install gltf-transform CLI
+        run: npm install -g @gltf-transform/cli
+
+      - name: Process models
+        run: python -m scripts.process
+
+      - name: Commit dist to dist branch
+        run: |
+          cd dist
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Build models from ${{ github.ref_name }}"
+          git tag "${{ github.ref_name }}"
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git push --force origin HEAD:dist
+          git push --force origin "${{ github.ref_name }}-dist"
+        # Note: jsDelivr serves from this dist branch at:
+        # https://cdn.jsdelivr.net/gh/{owner}/{repo}@{tag}-dist/manifest.json
+
+      - name: Upload dist as release artifact
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/manifest.json
+          body: |
+            Processed robot models for robot-viewer.
+
+            **CDN URLs:**
+            - Manifest: `https://cdn.jsdelivr.net/gh/${{ github.repository }}@${{ github.ref_name }}-dist/manifest.json`
+            - Models: `https://cdn.jsdelivr.net/gh/${{ github.repository }}@${{ github.ref_name }}-dist/models/{id}/robot_{lod}.urdf`

@@ -1,0 +1,17 @@
+[project]
+name = "robot-viewer-models"
+version = "0.1.0"
+description = "Pipeline to process URDF robot descriptions into web-optimized GLB meshes for robot-viewer"
+requires-python = ">=3.11"
+dependencies = [
+    "robot_descriptions>=1.12.0",
+    "trimesh>=4.0.0",
+    "numpy>=1.26.0",
+    "lxml>=5.0.0",
+    "pyyaml>=6.0",
+    "pycollada>=0.8",
+    "fast-simplification>=0.1.10",
+]
+
+[project.scripts]
+process = "scripts.process:main"

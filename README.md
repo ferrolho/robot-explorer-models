@@ -1,6 +1,6 @@
-# robot-viewer-models
+# robot-explorer-models
 
-Pipeline to process URDF robot descriptions for [robot-viewer](https://github.com/ferrolho/robot-viewer). Currently serves 81 robots from 35+ brands, sourced from [robot_descriptions](https://github.com/robot-descriptions/robot_descriptions.py) and [ROS-Industrial](https://github.com/ros-industrial) packages.
+Pipeline to process URDF robot descriptions for [Robot Explorer](https://github.com/ferrolho/robot-explorer). Currently serves 81 robots from 35+ brands, sourced from [robot_descriptions](https://github.com/robot-descriptions/robot_descriptions.py) and [ROS-Industrial](https://github.com/ros-industrial) packages.
 
 ## How it works
 
@@ -9,7 +9,7 @@ Pipeline to process URDF robot descriptions for [robot-viewer](https://github.co
 3. Rewrites URDF mesh references to relative paths
 4. Generates a `manifest.json` with model metadata
 
-Output is served via [jsDelivr CDN](https://www.jsdelivr.com/).
+Output is served from the `dist` branch via `raw.githubusercontent.com`.
 
 ## Usage
 
@@ -64,13 +64,13 @@ dist/
 - **`main`** — Source code: Python scripts, robot catalog (`robots.yaml`), CI workflow
 - **`dist`** — Build output only: processed meshes, rewritten URDFs, `manifest.json`. This branch is force-pushed by CI on each release. Binary assets are kept off `main` to avoid bloating clones.
 
-## CDN URLs
+## URLs
 
-jsDelivr serves files from the `dist` branch:
+Files are served from the `dist` branch via `raw.githubusercontent.com`:
 
 ```
-https://cdn.jsdelivr.net/gh/ferrolho/robot-viewer-models@dist/manifest.json
-https://cdn.jsdelivr.net/gh/ferrolho/robot-viewer-models@dist/models/{id}/robot.urdf
+https://raw.githubusercontent.com/ferrolho/robot-explorer-models/dist/manifest.json
+https://raw.githubusercontent.com/ferrolho/robot-explorer-models/dist/models/{id}/robot.urdf
 ```
 
 ## Acknowledgments

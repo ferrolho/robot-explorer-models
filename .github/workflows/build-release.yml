@@ -52,7 +52,7 @@ jobs:
         with:
           files: dist/manifest.json
           body: |
-            Processed robot models for robot-viewer.
+            Processed robot models for robot-explorer.
 
             **CDN URLs:**
             - Manifest: `https://cdn.jsdelivr.net/gh/${{ github.repository }}@${{ github.ref_name }}-dist/manifest.json`

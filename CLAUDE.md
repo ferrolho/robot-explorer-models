@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Pipeline to process URDF robot descriptions into web-optimized GLB meshes for [robot-viewer](https://github.com/ferrolho/robot-viewer). Pulls from the [robot_descriptions](https://github.com/robot-descriptions/robot_descriptions.py) Python package (179+ robots), decimates meshes, converts to GLB with optional Draco compression, and publishes via jsDelivr CDN.
+Pipeline to process URDF robot descriptions into web-optimized GLB meshes for [Robot Explorer](https://github.com/ferrolho/robot-explorer). Pulls from the [robot_descriptions](https://github.com/robot-descriptions/robot_descriptions.py) Python package (179+ robots), decimates meshes, converts to GLB with optional Draco compression, and publishes via jsDelivr CDN.
 
 ## Commands
 
@@ -21,5 +21,5 @@ Pipeline to process URDF robot descriptions into web-optimized GLB meshes for [r
 
 - Two LODs: low (~5k triangles) and medium (~25k triangles)
 - One rewritten URDF per LOD (`robot_low.urdf`, `robot_medium.urdf`) with mesh paths pointing to the corresponding GLB directory
-- `manifest.json` is the contract between this repo and robot-viewer
+- `manifest.json` is the contract between this repo and robot-explorer
 - Draco compression is optional (applied if gltf-transform CLI is available)

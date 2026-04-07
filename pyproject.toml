@@ -1,7 +1,7 @@
 [project]
-name = "robot-viewer-models"
+name = "robot-explorer-models"
 version = "0.1.0"
-description = "Pipeline to process URDF robot descriptions into web-optimized GLB meshes for robot-viewer"
+description = "Pipeline to process URDF robot descriptions into web-optimized GLB meshes for robot-explorer"
 requires-python = ">=3.11"
 dependencies = [
     "robot_descriptions>=1.12.0",

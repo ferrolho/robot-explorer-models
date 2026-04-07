@@ -19,6 +19,10 @@ robots:
   category: hand
   tipLinks:
   - index_anchor
+  - middle_anchor
+  - ring_anchor
+  - pinky_anchor
+  - thumb_anchor
 - id: aliengo
   module: aliengo_description
   brand: Unitree
@@ -35,7 +39,10 @@ robots:
   name: Allegro Hand
   category: hand
   tipLinks:
-  - link_15
+  - link_3_tip
+  - link_7_tip
+  - link_11_tip
+  - link_15_tip
 - id: anymal_b
   module: anymal_b_description
   brand: ANYbotics
@@ -122,9 +129,9 @@ robots:
   name: BH8-282
   category: hand
   tipLinks:
-  - finger_1_dist_link
-  - finger_2_dist_link
-  - finger_3_dist_link
+  - finger_1_tip_link
+  - finger_2_tip_link
+  - finger_3_tip_link
 - id: baxter
   module: baxter_description
   brand: Rethink
@@ -224,7 +231,7 @@ robots:
   name: FingerEdu
   category: hand
   tipLinks:
-  - finger_tip_link_0
+  - finger_tip_link
 - id: g1
   module: g1_description
   brand: Unitree
@@ -367,6 +374,9 @@ robots:
   category: hand
   tipLinks:
   - fingertip
+  - fingertip_2
+  - fingertip_3
+  - thumb_fingertip
 - id: mini_cheetah
   module: mini_cheetah_description
   brand: MIT
@@ -480,6 +490,7 @@ robots:
   name: 2F-85
   category: hand
   tipLinks:
+  - left_inner_finger
   - right_inner_finger
 - id: romeo
   module: romeo_description
@@ -555,6 +566,8 @@ robots:
   category: hand
   tipLinks:
   - finger_tip_link_0
+  - finger_tip_link_120
+  - finger_tip_link_240
 - id: upkie
   module: upkie_description
   brand: Upkie

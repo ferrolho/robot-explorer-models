@@ -132,6 +132,10 @@ robots:
   - finger_1_tip_link
   - finger_2_tip_link
   - finger_3_tip_link
+  tipFrames:
+    finger_1_tip_link: { parent: finger_1_dist_link, xyz: "-0.048 0.015 0" }
+    finger_2_tip_link: { parent: finger_2_dist_link, xyz: "-0.047 0.016 0" }
+    finger_3_tip_link: { parent: finger_3_dist_link, xyz: "-0.048 0.015 0" }
 - id: baxter
   module: baxter_description
   brand: Rethink
@@ -492,6 +496,9 @@ robots:
   tipLinks:
   - left_inner_finger_tip
   - right_inner_finger_tip
+  tipFrames:
+    left_inner_finger_tip: { parent: left_inner_finger, xyz: "0.008 0 0.044" }
+    right_inner_finger_tip: { parent: right_inner_finger, xyz: "0.008 0 0.044" }
 - id: romeo
   module: romeo_description
   brand: SoftBank

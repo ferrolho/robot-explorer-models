@@ -100,8 +100,9 @@ def resolve_mesh_path(filename: str, urdf_path: Path, package_path: Path, repo_p
         return urdf_path.parent / filename
 
 
-def rewrite_urdf(urdf_path: Path, output_path: Path, mesh_map: dict[str, str]) -> None:
-    """Copy URDF to output_path, rewriting mesh filenames to relative paths."""
+def rewrite_urdf(urdf_path: Path, output_path: Path, mesh_map: dict[str, str],
+                  tip_frames: dict[str, dict] | None = None) -> None:
+    """Copy URDF to output_path, rewriting mesh filenames and injecting tip frames."""
     tree = ET.parse(urdf_path)
     root = tree.getroot()
 
@@ -109,6 +110,17 @@ def rewrite_urdf(urdf_path: Path, output_path: Path, mesh_map: dict[str, str]) -
         filename = mesh_el.get("filename")
         if filename and filename in mesh_map:
             mesh_el.set("filename", mesh_map[filename])
+
+    # Inject fixed tip frames for hands that lack them in the upstream URDF
+    if tip_frames:
+        for link_name, spec in tip_frames.items():
+            if root.find(f".//link[@name='{link_name}']") is not None:
+                continue  # already exists
+            ET.SubElement(root, "link", name=link_name)
+            joint = ET.SubElement(root, "joint", name=f"{link_name}_joint", type="fixed")
+            ET.SubElement(joint, "origin", xyz=spec["xyz"], rpy="0 0 0")
+            ET.SubElement(joint, "parent", link=spec["parent"])
+            ET.SubElement(joint, "child", link=link_name)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     tree.write(output_path, xml_declaration=True, encoding="unicode")
@@ -230,7 +242,7 @@ def process_robot(robot: dict) -> dict | None:
 
     # Step 4: Write rewritten URDF
     urdf_output = model_dir / "robot.urdf"
-    rewrite_urdf(urdf_path, urdf_output, mesh_map)
+    rewrite_urdf(urdf_path, urdf_output, mesh_map, robot.get("tipFrames"))
 
     # Step 5: Validate
     actual_dof = count_non_fixed_joints(urdf_path)

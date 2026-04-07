@@ -490,8 +490,8 @@ robots:
   name: 2F-85
   category: hand
   tipLinks:
-  - left_inner_finger
-  - right_inner_finger
+  - left_inner_finger_tip
+  - right_inner_finger_tip
 - id: romeo
   module: romeo_description
   brand: SoftBank

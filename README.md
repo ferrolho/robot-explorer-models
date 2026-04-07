@@ -81,5 +81,6 @@ This project builds on top of [robot_descriptions.py](https://github.com/robot-d
 
 - **GLB conversion with material preservation**: The pipeline currently copies original mesh files (STL, DAE, OBJ) to preserve materials and textures. A future improvement is to convert these to GLB (binary glTF) using a tool that preserves materials (e.g., Blender headless or `assimp`), enabling Draco compression and significantly smaller download sizes (5-10x reduction). This would also allow multi-LOD support (low/medium/high mesh detail).
 - **Expand catalog**: 5 robots currently fail processing (Fetch has invalid URDF XML; iiwa7, Mini Cheetah, Sigmaban, Skydio X2 have unresolvable mesh paths). Fix these as upstream descriptions are updated.
+- ~~**Hand tip links**: Add fingertip frames to hands that lack them and configure multi-finger tipLinks for all hand models.~~ Done in v0.3.0 — all 7 hands now have correct multi-finger tipLinks; Barrett Hand and Robotiq 2F-85 URDFs augmented with fixed fingertip frames.
 - **Automated validation**: CI step to verify each model loads correctly in a headless Three.js/urdf-loader environment.
 - **CI pipeline**: Automate the full build (including Docker xacro rendering) in GitHub Actions so releases can be cut without local processing.

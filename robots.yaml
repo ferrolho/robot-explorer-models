@@ -123,6 +123,8 @@ robots:
   category: hand
   tipLinks:
   - finger_1_dist_link
+  - finger_2_dist_link
+  - finger_3_dist_link
 - id: baxter
   module: baxter_description
   brand: Rethink

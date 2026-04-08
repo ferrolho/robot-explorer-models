@@ -93,6 +93,16 @@ def resolve_mesh_path(filename: str, urdf_path: Path, package_path: Path, repo_p
                 candidate = base / stripped
                 if candidate.exists():
                     return candidate
+        # Cross-package reference: search for the package directory in the repo tree
+        if parts:
+            pkg_name = parts[0]
+            remaining = parts[1] if len(parts) == 2 else ""
+            for base in [repo_path, repo_path.parent]:
+                for pkg_dir in base.rglob(pkg_name):
+                    if pkg_dir.is_dir():
+                        candidate = pkg_dir / remaining
+                        if candidate.exists():
+                            return candidate
         return None
     elif filename.startswith("file://"):
         return Path(filename.replace("file://", ""))

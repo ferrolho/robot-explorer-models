@@ -235,13 +235,34 @@ def process_robot(robot: dict) -> dict | None:
         # Copy the mesh file
         shutil.copy2(resolved, out_path)
 
-        # Also copy any texture files in the same directory (for DAE files that reference textures)
+        # Copy textures referenced by DAE files
         if resolved.suffix.lower() == ".dae":
+            # 1) Copy sibling textures (same directory)
             for sibling in resolved.parent.iterdir():
                 if sibling.suffix.lower() in (".png", ".jpg", ".jpeg", ".tga", ".bmp"):
                     tex_out = meshes_dir / sibling.name
                     if not tex_out.exists():
                         shutil.copy2(sibling, tex_out)
+            # 2) Parse DAE XML for <init_from> texture references (may use relative paths)
+            try:
+                dae_tree = ET.parse(resolved)
+                dae_root = dae_tree.getroot()
+                ns = dae_root.tag.split("}")[0] + "}" if "}" in dae_root.tag else ""
+                for init_from in dae_root.iter(f"{ns}init_from"):
+                    tex_ref = init_from.text
+                    if not tex_ref:
+                        continue
+                    tex_path = (resolved.parent / tex_ref).resolve()
+                    if tex_path.exists() and tex_path.suffix.lower() in (".png", ".jpg", ".jpeg", ".tga", ".bmp"):
+                        tex_out = meshes_dir / tex_path.name
+                        if not tex_out.exists():
+                            shutil.copy2(tex_path, tex_out)
+                        # Rewrite the DAE to reference the co-located texture
+                        init_from.text = tex_path.name
+                if any(True for _ in dae_root.iter(f"{ns}init_from")):
+                    dae_tree.write(out_path, xml_declaration=True, encoding="unicode")
+            except ET.ParseError:
+                pass
 
         mesh_map[filename] = f"meshes/{out_name}"
         print(f"  {resolved.name} ({resolved.suffix}) -> meshes/{out_name}")

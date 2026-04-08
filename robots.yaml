@@ -121,8 +121,8 @@ robots:
   name: Bambot
   category: biped
   tipLinks:
-  - left_foot
-  - right_foot
+  - left_wheel
+  - right_wheel
 - id: barrett_hand
   module: barrett_hand_description
   brand: Barrett
@@ -150,8 +150,8 @@ robots:
   name: Berkeley Humanoid
   category: humanoid
   tipLinks:
-  - left_foot
-  - right_foot
+  - LL_FOOT
+  - LR_FOOT
 - id: bolt
   module: bolt_description
   brand: ODRI
@@ -166,8 +166,8 @@ robots:
   name: T1
   category: humanoid
   tipLinks:
-  - left_foot
-  - right_foot
+  - left_foot_link
+  - right_foot_link
 - id: cassie
   module: cassie_description
   brand: Agility
@@ -182,7 +182,7 @@ robots:
   name: Crazyflie 2.0
   category: drone
   tipLinks:
-  - prop0
+  - prop0_link
 - id: draco3
   module: draco3_description
   brand: Apptronik
@@ -197,23 +197,23 @@ robots:
   name: e.DO
   category: arm
   tipLinks:
-  - tool0
+  - link_6
 - id: ergocub
   module: ergocub_description
   brand: iit
   name: ergoCub
   category: humanoid
   tipLinks:
-  - l_hand
-  - r_hand
+  - l_hand_palm
+  - r_hand_palm
 - id: eve_r3
   module: eve_r3_description
   brand: Halodi
   name: Eve R3
   category: humanoid
   tipLinks:
-  - left_tool0
-  - right_tool0
+  - l_palm
+  - r_palm
 - id: fanuc_m710ic
   module: fanuc_m710ic_description
   brand: FANUC
@@ -250,7 +250,7 @@ robots:
   name: Gen2
   category: arm
   tipLinks:
-  - j2n6s200_end_effector
+  - j2s6s200_end_effector
   dof: 6
 - id: gen3_lite
   module: gen3_lite_description
@@ -286,8 +286,8 @@ robots:
   name: GR-1
   category: humanoid
   tipLinks:
-  - l_ankle_roll
-  - r_ankle_roll
+  - left_foot_roll_link
+  - right_foot_roll_link
 - id: h1
   module: h1_description
   brand: Unitree
@@ -302,8 +302,8 @@ robots:
   name: H1-2
   category: humanoid
   tipLinks:
-  - left_ankle_link
-  - right_ankle_link
+  - left_ankle_roll_link
+  - right_ankle_roll_link
 - id: hyq
   module: hyq_description
   brand: iit
@@ -329,7 +329,7 @@ robots:
   name: LBR iiwa 14
   category: arm
   tipLinks:
-  - tool0
+  - iiwa_link_ee
   dof: 7
   reach: 0.82
   weight: 30
@@ -359,8 +359,8 @@ robots:
   name: JVRC-1
   category: humanoid
   tipLinks:
-  - L_HAND_J1_LINK
-  - R_HAND_J1_LINK
+  - l_wrist
+  - r_wrist
 - id: laikago
   module: laikago_description
   brand: Unitree
@@ -404,16 +404,16 @@ robots:
   name: N1
   category: humanoid
   tipLinks:
-  - l_ankle_roll
-  - r_ankle_roll
+  - left_foot_roll_link
+  - right_foot_roll_link
 - id: nextage
   module: nextage_description
   brand: KAWADA
   name: NEXTAGE
   category: dual_arm
   tipLinks:
-  - LHAND_JOINT0_Link
-  - RHAND_JOINT0_Link
+  - LARM_JOINT5_Link
+  - RARM_JOINT5_Link
 - id: open_manipulator_x
   module: open_manipulator_x_description
   brand: ROBOTIS
@@ -455,39 +455,39 @@ robots:
   name: Ergo Jr
   category: arm
   tipLinks:
-  - m6
+  - fixed_tip
 - id: poppy_torso
   module: poppy_torso_description
   brand: Poppy
   name: Torso
   category: humanoid
   tipLinks:
-  - l_hand
-  - r_hand
+  - l_forearm
+  - r_forearm
 - id: pr2
   module: pr2_description
   brand: Willow Garage
   name: PR2
   category: mobile
   tipLinks:
-  - l_gripper_tool_frame
-  - r_gripper_tool_frame
+  - l_gripper_palm_link
+  - r_gripper_palm_link
 - id: r2
   module: r2_description
   brand: NASA
   name: Robonaut 2
   category: humanoid
   tipLinks:
-  - left/index/link3
-  - right/index/link3
+  - r2/left_palm
+  - r2/right_palm
 - id: reachy
   module: reachy_description
   brand: Pollen
   name: Reachy
   category: mobile
   tipLinks:
-  - l_hand
-  - r_hand
+  - left_tip
+  - right_tip
 - id: robotiq_2f85
   module: robotiq_2f85_description
   brand: Robotiq
@@ -505,8 +505,8 @@ robots:
   name: Romeo
   category: humanoid
   tipLinks:
-  - LHand
-  - RHand
+  - l_gripper
+  - r_gripper
 - id: sigmaban
   module: sigmaban_description
   brand: Rhoban
@@ -528,7 +528,7 @@ robots:
   name: ARM100
   category: arm
   tipLinks:
-  - Fixed_Jaw
+  - jaw
   dof: 5
 - id: solo
   module: solo_description
@@ -546,7 +546,7 @@ robots:
   name: Stretch RE1
   category: mobile
   tipLinks:
-  - link_grasp_center
+  - link_straight_gripper
 - id: talos
   module: talos_description
   brand: PAL Robotics
@@ -581,8 +581,8 @@ robots:
   name: Upkie
   category: wheeled
   tipLinks:
-  - left_wheel
-  - right_wheel
+  - left_wheel_tire
+  - right_wheel_tire
 - id: ur10
   module: ur10_description
   brand: Universal Robots

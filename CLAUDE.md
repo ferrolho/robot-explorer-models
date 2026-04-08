@@ -10,6 +10,14 @@ Pipeline to process URDF robot descriptions into web-optimized GLB meshes for [R
 - **Setup:** `python -m venv .venv && source .venv/bin/activate && pip install -e .`
 - **Draco compression:** requires `npm i -g @gltf-transform/cli`
 
+## Releasing
+
+CI only triggers on tag pushes (or manual dispatch). After pushing commits to `main`, tag and push to trigger the build:
+
+```bash
+git tag v<next> && git push origin v<next>
+```
+
 ## Architecture
 
 - `robots.yaml` — curated catalog of robots to process (id, upstream module, metadata)

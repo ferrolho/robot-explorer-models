@@ -191,6 +191,8 @@ robots:
   name: Draco 3
   category: humanoid
   tipLinks:
+  - l_hand_contact
+  - r_hand_contact
   - l_foot_contact
   - r_foot_contact
 - id: edo
@@ -208,6 +210,8 @@ robots:
   tipLinks:
   - l_hand_palm
   - r_hand_palm
+  - l_sole
+  - r_sole
 - id: eve_r3
   module: eve_r3_description
   brand: 1X
@@ -244,6 +248,8 @@ robots:
   name: G1
   category: humanoid
   tipLinks:
+  - left_rubber_hand
+  - right_rubber_hand
   - left_ankle_roll_link
   - right_ankle_roll_link
 - id: gen2
@@ -288,6 +294,8 @@ robots:
   name: GR-1
   category: humanoid
   tipLinks:
+  - left_end_effector_link
+  - right_end_effector_link
   - left_foot_roll_link
   - right_foot_roll_link
 - id: h1
@@ -296,6 +304,8 @@ robots:
   name: H1
   category: humanoid
   tipLinks:
+  - left_elbow_link
+  - right_elbow_link
   - left_ankle_link
   - right_ankle_link
 - id: h1_2
@@ -304,6 +314,8 @@ robots:
   name: H1-2
   category: humanoid
   tipLinks:
+  - left_wrist_yaw_link
+  - right_wrist_yaw_link
   - left_ankle_roll_link
   - right_ankle_roll_link
 - id: hyq
@@ -325,6 +337,8 @@ robots:
   tipLinks:
   - l_hand
   - r_hand
+  - l_sole
+  - r_sole
 - id: iiwa14
   module: iiwa14_description
   brand: KUKA
@@ -355,6 +369,8 @@ robots:
   tipLinks:
   - LARM_LINK7
   - RARM_LINK7
+  - LLEG_LINK5
+  - RLEG_LINK5
 - id: jvrc
   module: jvrc_description
   brand: AIST
@@ -363,6 +379,8 @@ robots:
   tipLinks:
   - l_wrist
   - r_wrist
+  - l_ankle
+  - r_ankle
 - id: laikago
   module: laikago_description
   brand: Unitree
@@ -406,6 +424,8 @@ robots:
   name: N1
   category: humanoid
   tipLinks:
+  - left_end_effector_link
+  - right_end_effector_link
   - left_foot_roll_link
   - right_foot_roll_link
 - id: nextage
@@ -482,6 +502,8 @@ robots:
   tipLinks:
   - r2/left_palm
   - r2/right_palm
+  - r2/left_leg_foot
+  - r2/right_leg_foot
 - id: reachy
   module: reachy_description
   brand: Pollen
@@ -509,6 +531,8 @@ robots:
   tipLinks:
   - l_gripper
   - r_gripper
+  - l_sole
+  - r_sole
 - id: sigmaban
   module: sigmaban_description
   brand: Rhoban

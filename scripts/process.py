@@ -260,6 +260,13 @@ def process_robot(robot: dict) -> dict | None:
     if expected_dof is not None and actual_dof != expected_dof:
         print(f"  WARNING: DOF mismatch — expected {expected_dof}, got {actual_dof}")
 
+    # Validate tipLinks exist in the URDF
+    tree = ET.parse(urdf_path)
+    link_names = {link.get("name") for link in tree.getroot().iter("link") if link.get("name")}
+    for tip in robot.get("tipLinks", []):
+        if tip not in link_names:
+            print(f"  WARNING: tipLink \"{tip}\" not found in URDF")
+
     # Step 6: Build manifest entry
     entry = {
         "id": robot_id,

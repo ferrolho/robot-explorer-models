@@ -12,11 +12,7 @@ Pipeline to process URDF robot descriptions into web-optimized GLB meshes for [R
 
 ## Releasing
 
-CI only triggers on tag pushes (or manual dispatch). After pushing commits to `main`, tag and push to trigger the build:
-
-```bash
-git tag v<next> && git push origin v<next>
-```
+CI only triggers on tag pushes (or manual dispatch). After pushing commits to `main`, tag and push to trigger the build.
 
 ## Architecture
 

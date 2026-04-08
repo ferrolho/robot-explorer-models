@@ -174,8 +174,8 @@ robots:
   name: Cassie
   category: biped
   tipLinks:
-  - left-foot
-  - right-foot
+  - leftfoot
+  - rightfoot
 - id: cf2
   module: cf2_description
   brand: Bitcraze

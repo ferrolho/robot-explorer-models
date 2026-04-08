@@ -166,6 +166,8 @@ robots:
   name: T1
   category: humanoid
   tipLinks:
+  - left_hand_link
+  - right_hand_link
   - left_foot_link
   - right_foot_link
 - id: cassie
@@ -208,7 +210,7 @@ robots:
   - r_hand_palm
 - id: eve_r3
   module: eve_r3_description
-  brand: Halodi
+  brand: 1X
   name: Eve R3
   category: humanoid
   tipLinks:

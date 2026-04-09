@@ -260,6 +260,7 @@ def process_robot(robot: dict) -> dict | None:
                 dae_root = dae_tree.getroot()
                 ns = dae_root.tag.split("}")[0] + "}" if "}" in dae_root.tag else ""
                 replacements: dict[str, str] = {}
+                missing_refs: list[str] = []
                 for init_from in dae_root.iter(f"{ns}init_from"):
                     tex_ref = init_from.text
                     if not tex_ref or "/" not in tex_ref:
@@ -271,14 +272,21 @@ def process_robot(robot: dict) -> dict | None:
                             shutil.copy2(tex_path, tex_out)
                         replacements[tex_ref] = tex_path.name
                     elif not tex_path.exists():
-                        # Strip references to missing textures to avoid 404s
+                        # Remove entire <init_from> element to avoid 404/400 fetches
                         print(f"  WARNING: texture not found, stripping reference: {tex_ref}")
-                        replacements[tex_ref] = ""
+                        missing_refs.append(tex_ref)
                 dae_text = out_path.read_text()
                 needs_write = False
                 for old_ref, new_ref in replacements.items():
                     dae_text = dae_text.replace(old_ref, new_ref)
                     needs_write = True
+                for missing in missing_refs:
+                    dae_text, n = re.subn(
+                        r"<init_from>\s*" + re.escape(missing) + r"\s*</init_from>",
+                        "", dae_text
+                    )
+                    if n:
+                        needs_write = True
                 # 3) Zero out high emission values that wash out textures
                 def _fix_emission(m: re.Match) -> str:
                     vals = m.group(1).split()

@@ -121,6 +121,15 @@ def rewrite_urdf(urdf_path: Path, output_path: Path, mesh_map: dict[str, str],
         if filename and filename in mesh_map:
             mesh_el.set("filename", mesh_map[filename])
 
+    # Normalize material alpha to 1.0 (some upstream URDFs use low alpha values)
+    for color_el in root.iter("color"):
+        rgba = color_el.get("rgba")
+        if rgba:
+            parts = rgba.split()
+            if len(parts) == 4 and float(parts[3]) < 1.0:
+                parts[3] = "1.0"
+                color_el.set("rgba", " ".join(parts))
+
     # Inject fixed tip frames for hands that lack them in the upstream URDF
     if tip_frames:
         for link_name, spec in tip_frames.items():

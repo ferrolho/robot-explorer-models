@@ -271,9 +271,18 @@ def process_robot(robot: dict) -> dict | None:
                             shutil.copy2(tex_path, tex_out)
                         replacements[tex_ref] = tex_path.name
                     elif not tex_path.exists():
-                        # Replace with data URI to avoid 404s without breaking ColladaParser
-                        print(f"  WARNING: texture not found, replacing with empty data URI: {tex_ref}")
-                        replacements[tex_ref] = "data:,"
+                        # Create a 1x1 placeholder texture to avoid 404s
+                        placeholder_name = Path(tex_ref).name
+                        placeholder_out = meshes_dir / placeholder_name
+                        if not placeholder_out.exists():
+                            # Minimal valid 1x1 white PNG (69 bytes)
+                            import base64
+                            placeholder_out.write_bytes(base64.b64decode(
+                                "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElE"
+                                "QVR4nGP4//8/AAX+Av4N70a4AAAAAElFTkSuQmCC"
+                            ))
+                            print(f"  WARNING: texture not found, created placeholder: {placeholder_name}")
+                        replacements[tex_ref] = placeholder_name
                 dae_text = out_path.read_text()
                 needs_write = False
                 for old_ref, new_ref in replacements.items():
@@ -356,8 +365,15 @@ def generate_manifest(entries: list[dict]) -> None:
 
 
 def main():
+    import sys
+    filter_ids = set(sys.argv[1:])
+
     catalog = load_catalog()
-    print(f"Loaded {len(catalog)} robots from robots.yaml")
+    if filter_ids:
+        catalog = [r for r in catalog if r["id"] in filter_ids]
+        print(f"Processing {len(catalog)} robot(s): {', '.join(r['id'] for r in catalog)}")
+    else:
+        print(f"Loaded {len(catalog)} robots from robots.yaml")
 
     # Clean previous output
     if DIST.exists():

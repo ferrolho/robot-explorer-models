@@ -11,6 +11,7 @@ For each robot in robots.yaml:
 
 import importlib
 import json
+import re
 import shutil
 import subprocess
 from datetime import datetime, timezone
@@ -269,10 +270,29 @@ def process_robot(robot: dict) -> dict | None:
                         if not tex_out.exists():
                             shutil.copy2(tex_path, tex_out)
                         replacements[tex_ref] = tex_path.name
-                if replacements:
-                    dae_text = out_path.read_text()
-                    for old_ref, new_ref in replacements.items():
-                        dae_text = dae_text.replace(old_ref, new_ref)
+                    elif not tex_path.exists():
+                        # Strip references to missing textures to avoid 404s
+                        print(f"  WARNING: texture not found, stripping reference: {tex_ref}")
+                        replacements[tex_ref] = ""
+                dae_text = out_path.read_text()
+                needs_write = False
+                for old_ref, new_ref in replacements.items():
+                    dae_text = dae_text.replace(old_ref, new_ref)
+                    needs_write = True
+                # 3) Zero out high emission values that wash out textures
+                def _fix_emission(m: re.Match) -> str:
+                    vals = m.group(1).split()
+                    if len(vals) == 4 and any(float(v) > 0.1 for v in vals[:3]):
+                        return m.group(0).replace(m.group(1), "0 0 0 1")
+                    return m.group(0)
+                fixed = re.sub(
+                    r"<emission>\s*<color[^>]*>([\d.\s]+)</color>\s*</emission>",
+                    _fix_emission, dae_text
+                )
+                if fixed != dae_text:
+                    dae_text = fixed
+                    needs_write = True
+                if needs_write:
                     out_path.write_text(dae_text)
             except ET.ParseError:
                 pass

@@ -6,9 +6,25 @@ Pipeline to process URDF robot descriptions into web-optimized GLB meshes for [R
 
 ## Commands
 
-- **Process models:** `python -m scripts.process`
+- **Process all models:** `python -m scripts.process`
+- **Process specific robots:** `python -m scripts.process atlas_v4 booster_t1`
 - **Setup:** `python -m venv .venv && source .venv/bin/activate && pip install -e .`
 - **Draco compression:** requires `npm i -g @gltf-transform/cli`
+
+## Local Development
+
+To iterate without waiting for CI, process locally and serve with CORS:
+
+```bash
+python -m scripts.process atlas_v4        # process one robot
+python3 scripts/serve.py                  # serve dist/ on :8081 with CORS
+```
+
+Then in the robot-explorer repo:
+
+```bash
+VITE_MODELS_BASE_URL=http://localhost:8081/ npm run dev
+```
 
 ## Releasing
 

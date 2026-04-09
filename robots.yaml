@@ -166,10 +166,13 @@ robots:
   name: T1
   category: humanoid
   tipLinks:
-  - left_hand_link
-  - right_hand_link
+  - left_hand_tip
+  - right_hand_tip
   - left_foot_link
   - right_foot_link
+  tipFrames:
+    left_hand_tip: { parent: left_hand_link, xyz: "0 0.13 0" }
+    right_hand_tip: { parent: right_hand_link, xyz: "0 -0.13 0" }
 - id: cassie
   module: cassie_description
   brand: Agility

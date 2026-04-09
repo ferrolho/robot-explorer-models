@@ -243,24 +243,28 @@ def process_robot(robot: dict) -> dict | None:
                     tex_out = meshes_dir / sibling.name
                     if not tex_out.exists():
                         shutil.copy2(sibling, tex_out)
-            # 2) Parse DAE XML for <init_from> texture references (may use relative paths)
+            # 2) Parse DAE for <init_from> texture references and copy them.
+            #    Use string replacement to rewrite paths — ET.write corrupts Collada namespaces.
             try:
                 dae_tree = ET.parse(resolved)
                 dae_root = dae_tree.getroot()
                 ns = dae_root.tag.split("}")[0] + "}" if "}" in dae_root.tag else ""
+                replacements: dict[str, str] = {}
                 for init_from in dae_root.iter(f"{ns}init_from"):
                     tex_ref = init_from.text
-                    if not tex_ref:
+                    if not tex_ref or "/" not in tex_ref:
                         continue
                     tex_path = (resolved.parent / tex_ref).resolve()
                     if tex_path.exists() and tex_path.suffix.lower() in (".png", ".jpg", ".jpeg", ".tga", ".bmp"):
                         tex_out = meshes_dir / tex_path.name
                         if not tex_out.exists():
                             shutil.copy2(tex_path, tex_out)
-                        # Rewrite the DAE to reference the co-located texture
-                        init_from.text = tex_path.name
-                if any(True for _ in dae_root.iter(f"{ns}init_from")):
-                    dae_tree.write(out_path, xml_declaration=True, encoding="unicode")
+                        replacements[tex_ref] = tex_path.name
+                if replacements:
+                    dae_text = out_path.read_text()
+                    for old_ref, new_ref in replacements.items():
+                        dae_text = dae_text.replace(old_ref, new_ref)
+                    out_path.write_text(dae_text)
             except ET.ParseError:
                 pass
 

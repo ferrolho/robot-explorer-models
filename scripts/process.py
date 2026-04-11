@@ -401,21 +401,32 @@ def process_robot(robot: dict) -> dict | None:
             except ET.ParseError:
                 pass
 
-        # Copy MTL and textures referenced by OBJ files
+        # Copy MTL and textures referenced by OBJ files.
+        # The companion MTL is always written with the same stem as the OBJ
+        # (e.g. body.obj → body.mtl) so viewers that derive the MTL path from
+        # the OBJ filename can find it (the mtllib directive inside the OBJ is
+        # rewritten to match).
         elif resolved.suffix.lower() == ".obj":
             try:
                 obj_text = resolved.read_text()
             except UnicodeDecodeError:
                 obj_text = ""
+            companion_mtl = out_path.with_suffix(".mtl").name  # e.g. "body.mtl"
+            obj_needs_rewrite = False
+            obj_replacements: dict[str, str] = {}
             for line in obj_text.splitlines():
                 if line.strip().startswith("mtllib "):
                     mtl_name = line.strip().split(None, 1)[1]
                     mtl_src = resolved.parent / mtl_name
                     if not mtl_src.exists():
                         continue
-                    mtl_out = meshes_dir / mtl_name
+                    # Copy as companion MTL (same stem as the OBJ)
+                    mtl_out = meshes_dir / companion_mtl
                     if not mtl_out.exists():
                         shutil.copy2(mtl_src, mtl_out)
+                    if mtl_name != companion_mtl:
+                        obj_replacements[f"mtllib {mtl_name}"] = f"mtllib {companion_mtl}"
+                        obj_needs_rewrite = True
                     # Parse MTL for texture map references
                     try:
                         mtl_text = mtl_src.read_text()
@@ -433,6 +444,12 @@ def process_robot(robot: dict) -> dict | None:
                                 tex_out = meshes_dir / tex_src.name
                                 if not tex_out.exists():
                                     shutil.copy2(tex_src, tex_out)
+            # Rewrite mtllib directive to point to the companion MTL
+            if obj_needs_rewrite:
+                obj_out_text = out_path.read_text()
+                for old_ref, new_ref in obj_replacements.items():
+                    obj_out_text = obj_out_text.replace(old_ref, new_ref)
+                out_path.write_text(obj_out_text)
 
         mesh_map[filename] = f"meshes/{out_name}"
         print(f"  {resolved.name} ({resolved.suffix}) -> meshes/{out_name}")

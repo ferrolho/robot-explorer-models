@@ -861,6 +861,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 0.692
+  payload: 3
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_crx_description
   xacro: fanuc_crx_description/robot/crx3ia.urdf.xacro
@@ -871,6 +873,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 0.994
+  payload: 5
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_crx_description
   xacro: fanuc_crx_description/robot/crx5ia.urdf.xacro
@@ -881,6 +885,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.249
+  payload: 10
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_crx_description
   xacro: fanuc_crx_description/robot/crx10ia.urdf.xacro
@@ -891,6 +897,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.418
+  payload: 10
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_crx_description
   xacro: fanuc_crx_description/robot/crx10ia_l.urdf.xacro
@@ -901,6 +909,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.418
+  payload: 10
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_crx_description
   xacro: fanuc_crx_description/robot/crx10ia_lp.urdf.xacro
@@ -911,6 +921,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.418
+  payload: 20
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_crx_description
   xacro: fanuc_crx_description/robot/crx20ia_l.urdf.xacro
@@ -921,6 +933,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.756
+  payload: 30
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_crx_description
   xacro: fanuc_crx_description/robot/crx30ia.urdf.xacro
@@ -933,6 +947,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 0.55
+  payload: 4
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_lrmate_description
   xacro: fanuc_lrmate_description/robot/er4ia.urdf.xacro
@@ -943,6 +959,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 0.717
+  payload: 7
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_lrmate_description
   xacro: fanuc_lrmate_description/robot/lrmate200id.urdf.xacro
@@ -953,6 +971,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 0.55
+  payload: 4
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_lrmate_description
   xacro: fanuc_lrmate_description/robot/lrmate200id4s.urdf.xacro
@@ -963,6 +983,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 0.717
+  payload: 7
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_lrmate_description
   xacro: fanuc_lrmate_description/robot/lrmate200id7c.urdf.xacro
@@ -973,6 +995,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 0.911
+  payload: 7
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_lrmate_description
   xacro: fanuc_lrmate_description/robot/lrmate200id7l.urdf.xacro
@@ -983,6 +1007,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 0.911
+  payload: 7
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_lrmate_description
   xacro: fanuc_lrmate_description/robot/lrmate200id7lc.urdf.xacro
@@ -993,6 +1019,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 0.717
+  payload: 7
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_lrmate_description
   xacro: fanuc_lrmate_description/robot/lrmate200id7we.urdf.xacro
@@ -1003,6 +1031,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.101
+  payload: 10
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_lrmate_description
   xacro: fanuc_lrmate_description/robot/lrmate10-11a.urdf.xacro
@@ -1013,6 +1043,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.101
+  payload: 10
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_lrmate_description
   xacro: fanuc_lrmate_description/robot/lrmate10-11afc.urdf.xacro
@@ -1023,6 +1055,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.853
+  payload: 25
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_lrmate_description
   xacro: fanuc_lrmate_description/robot/lrmate25-19a.urdf.xacro
@@ -1033,6 +1067,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.853
+  payload: 25
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_lrmate_description
   xacro: fanuc_lrmate_description/robot/lrmate25-19afc.urdf.xacro
@@ -1043,6 +1079,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.445
+  payload: 35
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_lrmate_description
   xacro: fanuc_lrmate_description/robot/lrmate35-14a.urdf.xacro
@@ -1055,6 +1093,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.032
+  payload: 8
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m10_description
   xacro: fanuc_m10_description/robot/m10_8-20d.urdf.xacro
@@ -1065,6 +1105,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.636
+  payload: 10
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m10_description
   xacro: fanuc_m10_description/robot/m10_10-16d.urdf.xacro
@@ -1075,6 +1117,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.441
+  payload: 12
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m10_description
   xacro: fanuc_m10_description/robot/m10_12-14d.urdf.xacro
@@ -1085,6 +1129,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.103
+  payload: 16
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m10_description
   xacro: fanuc_m10_description/robot/m10_16-11d.urdf.xacro
@@ -1097,6 +1143,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.272
+  payload: 12
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m20_description
   xacro: fanuc_m20_description/robot/m20_12-23d.urdf.xacro
@@ -1107,6 +1155,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.831
+  payload: 25
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m20_description
   xacro: fanuc_m20_description/robot/m20_25-18d.urdf.xacro
@@ -1117,6 +1167,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.831
+  payload: 35
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m20_description
   xacro: fanuc_m20_description/robot/m20_35-18d.urdf.xacro
@@ -1129,6 +1181,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 3.123
+  payload: 12
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m710_description
   xacro: fanuc_m710_description/robot/m710ic_12l.urdf.xacro
@@ -1139,6 +1193,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 3.11
+  payload: 20
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m710_description
   xacro: fanuc_m710_description/robot/m710ic_20l.urdf.xacro
@@ -1149,6 +1205,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.582
+  payload: 20
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m710_description
   xacro: fanuc_m710_description/robot/m710ic_20m.urdf.xacro
@@ -1159,6 +1217,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.606
+  payload: 45
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m710_description
   xacro: fanuc_m710_description/robot/m710ic_45m.urdf.xacro
@@ -1169,6 +1229,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.05
+  payload: 50
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m710_description
   xacro: fanuc_m710_description/robot/m710ic_50.urdf.xacro
@@ -1179,6 +1241,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.05
+  payload: 50
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m710_description
   xacro: fanuc_m710_description/robot/m710ic_50e.urdf.xacro
@@ -1189,6 +1253,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 1.359
+  payload: 50
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m710_description
   xacro: fanuc_m710_description/robot/m710ic_50s.urdf.xacro
@@ -1199,6 +1265,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.05
+  payload: 70
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m710_description
   xacro: fanuc_m710_description/robot/m710ic_70.urdf.xacro
@@ -1209,6 +1277,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.606
+  payload: 50
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m710_description
   xacro: fanuc_m710_description/robot/m710id_50m.urdf.xacro
@@ -1219,6 +1289,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.104
+  payload: 70
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m710_description
   xacro: fanuc_m710_description/robot/m710id_70.urdf.xacro
@@ -1231,6 +1303,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.04
+  payload: 60
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_m800_description
   xacro: fanuc_m800_description/robot/m800_60_20b.urdf.xacro
@@ -1243,6 +1317,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.606
+  payload: 45
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_paint_description
   xacro: fanuc_paint_description/robot/p350ia_45_lh.urdf.xacro
@@ -1253,6 +1329,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.606
+  payload: 45
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_paint_description
   xacro: fanuc_paint_description/robot/p350ia_45_rh.urdf.xacro
@@ -1265,6 +1343,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.23
+  payload: 80
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r1000ia_description
   xacro: fanuc_r1000ia_description/robot/r1000ia_80f.urdf.xacro
@@ -1275,6 +1355,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.23
+  payload: 100
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r1000ia_description
   xacro: fanuc_r1000ia_description/robot/r1000ia_100f.urdf.xacro
@@ -1285,6 +1367,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.23
+  payload: 130
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r1000ia_description
   xacro: fanuc_r1000ia_description/robot/r1000ia_130f.urdf.xacro
@@ -1297,6 +1381,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 3.54
+  payload: 100
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000ic_100p.urdf.xacro
@@ -1307,6 +1393,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 3.54
+  payload: 100
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000ic_100ph.urdf.xacro
@@ -1317,6 +1405,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 3.1
+  payload: 125
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000ic_125l.urdf.xacro
@@ -1327,6 +1417,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.655
+  payload: 165
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000ic_165f.urdf.xacro
@@ -1337,6 +1429,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 3.095
+  payload: 165
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000ic_165r.urdf.xacro
@@ -1347,6 +1441,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.04
+  payload: 190
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000ic_190s.urdf.xacro
@@ -1357,6 +1453,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.518
+  payload: 190
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000ic_190u.urdf.xacro
@@ -1367,6 +1465,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.655
+  payload: 210
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000ic_210f.urdf.xacro
@@ -1377,6 +1477,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 3.1
+  payload: 210
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000ic_210l.urdf.xacro
@@ -1387,6 +1489,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 3.095
+  payload: 210
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000ic_210r.urdf.xacro
@@ -1397,6 +1501,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.45
+  payload: 210
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000ic_210we.urdf.xacro
@@ -1407,6 +1513,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.518
+  payload: 220
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000ic_220u.urdf.xacro
@@ -1417,6 +1525,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.655
+  payload: 240
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000ic_240f.urdf.xacro
@@ -1427,6 +1537,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.655
+  payload: 270
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000ic_270f.urdf.xacro
@@ -1437,6 +1549,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 3.095
+  payload: 270
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000ic_270r.urdf.xacro
@@ -1447,6 +1561,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.605
+  payload: 100
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000id_100fh.urdf.xacro
@@ -1457,6 +1573,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.605
+  payload: 165
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000id_165fh.urdf.xacro
@@ -1467,6 +1585,8 @@ robots:
   category: arm
   tipLinks: [flange]
   dof: 6
+  reach: 2.605
+  payload: 210
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000id_210fh.urdf.xacro

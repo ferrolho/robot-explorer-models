@@ -351,7 +351,7 @@ robots:
   name: LBR iiwa 7
   category: arm
   tipLinks:
-  - tool0
+  - iiwa_link_ee
   dof: 7
   reach: 0.8
   weight: 23.9
@@ -402,10 +402,10 @@ robots:
   name: Mini Cheetah
   category: quadruped
   tipLinks:
-  - FR_foot
-  - FL_foot
-  - HR_foot
-  - HL_foot
+  - shank_fr
+  - shank_fl
+  - shank_hr
+  - shank_hl
 - id: minitaur
   module: minitaur_description
   brand: Ghost Robotics
@@ -534,15 +534,15 @@ robots:
   name: Sigmaban
   category: humanoid
   tipLinks:
-  - left_foot
-  - right_foot
+  - left_foot_tip
+  - right_foot_tip
 - id: skydio_x2
   module: skydio_x2_description
   brand: Skydio
   name: X2
   category: drone
   tipLinks:
-  - base_link
+  - x2
 - id: so_arm100
   module: so_arm100_description
   brand: SO

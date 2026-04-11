@@ -186,6 +186,24 @@ def rewrite_urdf(urdf_path: Path, output_path: Path, mesh_map: dict[str, str],
                     origin_el.set("xyz", "0 0 0")
                     origin_el.set("rpy", "0 0 0")
 
+    # Convert continuous joints to revolute with ±π limits so the viewer can
+    # generate bounded sliders (continuous joints have no limits to display)
+    import math
+    for joint_el in root.iter("joint"):
+        if joint_el.get("type") == "continuous":
+            joint_el.set("type", "revolute")
+            limit_el = joint_el.find("limit")
+            if limit_el is None:
+                limit_el = ET.SubElement(joint_el, "limit")
+            if not limit_el.get("lower"):
+                limit_el.set("lower", str(-math.pi))
+            if not limit_el.get("upper"):
+                limit_el.set("upper", str(math.pi))
+            if not limit_el.get("effort"):
+                limit_el.set("effort", "100")
+            if not limit_el.get("velocity"):
+                limit_el.set("velocity", "100")
+
     # Normalize material alpha to 1.0 (some upstream URDFs use low alpha values)
     for color_el in root.iter("color"):
         rgba = color_el.get("rgba")

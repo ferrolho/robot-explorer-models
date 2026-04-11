@@ -53,11 +53,32 @@ def clone_repo(url: str, branch: str, name: str) -> Path:
     return cache
 
 
+def start_xacro_container() -> bool:
+    """Start the persistent xacro Docker container. Returns True on success."""
+    result = subprocess.run(
+        [str(ROOT / "scripts" / "render_xacro.sh"), "start"],
+        capture_output=True, text=True,
+    )
+    if result.returncode != 0:
+        print(f"WARNING: Failed to start xacro container: {result.stderr[:200]}")
+        return False
+    print(result.stdout.strip())
+    return True
+
+
+def stop_xacro_container() -> None:
+    """Stop and remove the persistent xacro Docker container."""
+    subprocess.run(
+        [str(ROOT / "scripts" / "render_xacro.sh"), "stop"],
+        capture_output=True,
+    )
+
+
 def render_xacro(repo_dir: Path, xacro_rel_path: str, output_path: Path) -> bool:
-    """Render a xacro file to URDF using the ROS Noetic Docker container."""
+    """Render a xacro file to URDF using the persistent Docker container."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
     result = subprocess.run(
-        [str(ROOT / "scripts" / "render_xacro.sh"), str(repo_dir), xacro_rel_path, str(output_path)],
+        [str(ROOT / "scripts" / "render_xacro.sh"), "render", str(repo_dir), xacro_rel_path, str(output_path)],
         capture_output=True, text=True,
     )
     if result.returncode != 0:
@@ -410,15 +431,24 @@ def main():
     if DIST.exists():
         shutil.rmtree(DIST)
 
+    # Start persistent xacro container if any robots need it
+    needs_xacro = any("xacro" in r for r in catalog)
+    if needs_xacro:
+        start_xacro_container()
+
     entries: list[dict] = []
     failures: list[str] = []
 
-    for robot in catalog:
-        entry = process_robot(robot)
-        if entry:
-            entries.append(entry)
-        else:
-            failures.append(f"{robot['brand']} {robot['name']} ({robot['id']})")
+    try:
+        for robot in catalog:
+            entry = process_robot(robot)
+            if entry:
+                entries.append(entry)
+            else:
+                failures.append(f"{robot['brand']} {robot['name']} ({robot['id']})")
+    finally:
+        if needs_xacro:
+            stop_xacro_container()
 
     generate_manifest(entries)
 

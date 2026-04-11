@@ -1,0 +1,4 @@
+FROM ros:noetic-ros-core
+RUN apt-get update -qq \
+    && apt-get install -qq -y --no-install-recommends ros-noetic-xacro \
+    && rm -rf /var/lib/apt/lists/*

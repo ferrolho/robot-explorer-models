@@ -21,11 +21,7 @@ source .venv/bin/activate
 pip install -e .
 ```
 
-Some robots (ABB, KUKA) use ROS xacro files that require a ROS Noetic Docker container to render:
-
-```bash
-docker pull ros:noetic-ros-core
-```
+Some robots (ABB, KUKA) use ROS xacro files that require Docker to render. The image is built automatically on first run from `Dockerfile.xacro`.
 
 ### Process models
 
@@ -83,4 +79,4 @@ This project builds on top of [robot_descriptions.py](https://github.com/robot-d
 - **Expand catalog**: 5 robots currently fail processing (Fetch has invalid URDF XML; iiwa7, Mini Cheetah, Sigmaban, Skydio X2 have unresolvable mesh paths). Fix these as upstream descriptions are updated.
 - ~~**Hand tip links**: Add fingertip frames to hands that lack them and configure multi-finger tipLinks for all hand models.~~ Done in v0.3.0 — all 7 hands now have correct multi-finger tipLinks; Barrett Hand and Robotiq 2F-85 URDFs augmented with fixed fingertip frames.
 - **Automated validation**: CI step to verify each model loads correctly in a headless Three.js/urdf-loader environment.
-- **CI pipeline**: Automate the full build (including Docker xacro rendering) in GitHub Actions so releases can be cut without local processing.
+- ~~**CI pipeline**: Automate the full build (including Docker xacro rendering) in GitHub Actions so releases can be cut without local processing.~~ Done — CI workflow runs on tag push, and xacro rendering uses a persistent Docker container with a pre-built image to avoid repeated apt-get installs.

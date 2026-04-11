@@ -87,9 +87,18 @@ def render_xacro(repo_dir: Path, xacro_rel_path: str, output_path: Path) -> bool
     return output_path.exists() and output_path.stat().st_size > 0
 
 
+def parse_urdf(urdf_path: Path) -> ET.ElementTree:
+    """Parse a URDF file, stripping <gazebo> blocks that may contain invalid XML namespaces."""
+    text = urdf_path.read_text()
+    # Gazebo blocks can contain unbound namespace prefixes (e.g. sensor:camera)
+    # which crash the XML parser.  Strip them — they're not needed for mesh processing.
+    text = re.sub(r"<gazebo[\s>].*?</gazebo>", "", text, flags=re.DOTALL)
+    return ET.ElementTree(ET.fromstring(text))
+
+
 def find_mesh_references(urdf_path: Path) -> list[tuple[ET.Element, str]]:
     """Parse URDF and return (element, filename) pairs for all mesh references (visual + collision)."""
-    tree = ET.parse(urdf_path)
+    tree = parse_urdf(urdf_path)
     root = tree.getroot()
     refs = []
     for mesh_el in root.iter("mesh"):
@@ -134,13 +143,23 @@ def resolve_mesh_path(filename: str, urdf_path: Path, package_path: Path, repo_p
     elif filename.startswith("file://"):
         return Path(filename.replace("file://", ""))
     else:
-        return urdf_path.parent / filename
+        # Relative path — try URDF dir, its ancestors, package_path, and repo_path
+        candidates = [
+            urdf_path.parent / filename,
+            urdf_path.parent.parent / filename,
+            package_path / filename,
+            repo_path / filename,
+        ]
+        for candidate in candidates:
+            if candidate.exists():
+                return candidate
+        return None
 
 
 def rewrite_urdf(urdf_path: Path, output_path: Path, mesh_map: dict[str, str],
                   tip_frames: dict[str, dict] | None = None) -> None:
     """Copy URDF to output_path, rewriting mesh filenames and injecting tip frames."""
-    tree = ET.parse(urdf_path)
+    tree = parse_urdf(urdf_path)
     root = tree.getroot()
 
     for mesh_el in root.iter("mesh"):
@@ -193,7 +212,7 @@ def rewrite_urdf(urdf_path: Path, output_path: Path, mesh_map: dict[str, str],
 
 def count_non_fixed_joints(urdf_path: Path) -> int:
     """Count non-fixed joints in a URDF file."""
-    tree = ET.parse(urdf_path)
+    tree = parse_urdf(urdf_path)
     root = tree.getroot()
     count = 0
     for joint in root.iter("joint"):
@@ -361,7 +380,7 @@ def process_robot(robot: dict) -> dict | None:
         mesh_map[filename] = f"meshes/{out_name}"
         print(f"  {resolved.name} ({resolved.suffix}) -> meshes/{out_name}")
 
-    if not mesh_map:
+    if not mesh_map and refs:
         print(f"  ERROR: No meshes could be resolved")
         return None
 
@@ -376,7 +395,7 @@ def process_robot(robot: dict) -> dict | None:
         print(f"  WARNING: DOF mismatch — expected {expected_dof}, got {actual_dof}")
 
     # Validate tipLinks exist in the URDF
-    tree = ET.parse(urdf_path)
+    tree = parse_urdf(urdf_path)
     link_names = {link.get("name") for link in tree.getroot().iter("link") if link.get("name")}
     for tip in robot.get("tipLinks", []):
         if tip not in link_names:

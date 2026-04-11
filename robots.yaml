@@ -207,7 +207,7 @@ robots:
   - link_6
 - id: ergocub
   module: ergocub_description
-  brand: iit
+  brand: IIT
   name: ergoCub
   category: humanoid
   tipLinks:
@@ -315,7 +315,7 @@ robots:
   - right_ankle_roll_link
 - id: hyq
   module: hyq_description
-  brand: iit
+  brand: IIT
   name: HyQ
   category: quadruped
   tipLinks:
@@ -326,7 +326,7 @@ robots:
   weight: 80
 - id: icub
   module: icub_description
-  brand: iit
+  brand: IIT
   name: iCub
   category: humanoid
   tipLinks:

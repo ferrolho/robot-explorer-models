@@ -392,10 +392,15 @@ robots:
   name: LEAP Hand
   category: hand
   tipLinks:
-  - fingertip
-  - fingertip_2
-  - fingertip_3
-  - thumb_fingertip
+  - fingertip_tip
+  - fingertip_2_tip
+  - fingertip_3_tip
+  - thumb_fingertip_tip
+  tipFrames:
+    fingertip_tip: { parent: fingertip, xyz: "0 -0.047 0.019" }
+    fingertip_2_tip: { parent: fingertip_2, xyz: "0 -0.047 0.019" }
+    fingertip_3_tip: { parent: fingertip_3, xyz: "0 -0.047 0.019" }
+    thumb_fingertip_tip: { parent: thumb_fingertip, xyz: "0 -0.057 -0.016" }
 - id: mini_cheetah
   module: mini_cheetah_description
   brand: MIT

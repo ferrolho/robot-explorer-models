@@ -1,0 +1,2051 @@
+{
+  "version": 2,
+  "generated": "2026-04-11T19:28:51.656141+00:00",
+  "models": [
+    {
+      "id": "a1",
+      "brand": "Unitree",
+      "name": "A1",
+      "tipLinks": [
+        "FR_foot",
+        "FL_foot",
+        "RR_foot",
+        "RL_foot"
+      ],
+      "category": "quadruped",
+      "dof": 12,
+      "upstream": "a1_description",
+      "urdf": "models/a1/robot.urdf"
+    },
+    {
+      "id": "ability_hand",
+      "brand": "PSYONIC",
+      "name": "Ability Hand",
+      "tipLinks": [
+        "index_anchor",
+        "middle_anchor",
+        "ring_anchor",
+        "pinky_anchor",
+        "thumb_anchor"
+      ],
+      "category": "hand",
+      "dof": 10,
+      "upstream": "ability_hand_description",
+      "urdf": "models/ability_hand/robot.urdf"
+    },
+    {
+      "id": "aliengo",
+      "brand": "Unitree",
+      "name": "Aliengo",
+      "tipLinks": [
+        "FR_foot",
+        "FL_foot",
+        "RR_foot",
+        "RL_foot"
+      ],
+      "category": "quadruped",
+      "dof": 12,
+      "upstream": "aliengo_description",
+      "urdf": "models/aliengo/robot.urdf"
+    },
+    {
+      "id": "allegro_hand",
+      "brand": "Wonik",
+      "name": "Allegro Hand",
+      "tipLinks": [
+        "link_3_tip",
+        "link_7_tip",
+        "link_11_tip",
+        "link_15_tip"
+      ],
+      "category": "hand",
+      "dof": 16,
+      "upstream": "allegro_hand_description",
+      "urdf": "models/allegro_hand/robot.urdf"
+    },
+    {
+      "id": "anymal_b",
+      "brand": "ANYbotics",
+      "name": "ANYmal B",
+      "tipLinks": [
+        "LF_FOOT",
+        "RF_FOOT",
+        "LH_FOOT",
+        "RH_FOOT"
+      ],
+      "category": "quadruped",
+      "dof": 12,
+      "upstream": "anymal_b_description",
+      "urdf": "models/anymal_b/robot.urdf"
+    },
+    {
+      "id": "anymal_c",
+      "brand": "ANYbotics",
+      "name": "ANYmal C",
+      "tipLinks": [
+        "LF_FOOT",
+        "RF_FOOT",
+        "LH_FOOT",
+        "RH_FOOT"
+      ],
+      "category": "quadruped",
+      "dof": 12,
+      "upstream": "anymal_c_description",
+      "urdf": "models/anymal_c/robot.urdf",
+      "weight": 50,
+      "payload": 10
+    },
+    {
+      "id": "anymal_d",
+      "brand": "ANYbotics",
+      "name": "ANYmal D",
+      "tipLinks": [
+        "LF_FOOT",
+        "RF_FOOT",
+        "LH_FOOT",
+        "RH_FOOT"
+      ],
+      "category": "quadruped",
+      "dof": 14,
+      "upstream": "anymal_d_description",
+      "urdf": "models/anymal_d/robot.urdf"
+    },
+    {
+      "id": "atlas_drc",
+      "brand": "Boston Dynamics",
+      "name": "Atlas DRC",
+      "tipLinks": [
+        "l_hand",
+        "r_hand",
+        "l_foot",
+        "r_foot"
+      ],
+      "category": "humanoid",
+      "dof": 30,
+      "upstream": "atlas_drc_description",
+      "urdf": "models/atlas_drc/robot.urdf"
+    },
+    {
+      "id": "atlas_v4",
+      "brand": "Boston Dynamics",
+      "name": "Atlas v4",
+      "tipLinks": [
+        "l_hand",
+        "r_hand",
+        "l_foot",
+        "r_foot"
+      ],
+      "category": "humanoid",
+      "dof": 30,
+      "upstream": "atlas_v4_description",
+      "urdf": "models/atlas_v4/robot.urdf"
+    },
+    {
+      "id": "b1",
+      "brand": "Unitree",
+      "name": "B1",
+      "tipLinks": [
+        "FR_foot",
+        "FL_foot",
+        "RR_foot",
+        "RL_foot"
+      ],
+      "category": "quadruped",
+      "dof": 12,
+      "upstream": "b1_description",
+      "urdf": "models/b1/robot.urdf"
+    },
+    {
+      "id": "b2",
+      "brand": "Unitree",
+      "name": "B2",
+      "tipLinks": [
+        "FR_foot",
+        "FL_foot",
+        "RR_foot",
+        "RL_foot"
+      ],
+      "category": "quadruped",
+      "dof": 12,
+      "upstream": "b2_description",
+      "urdf": "models/b2/robot.urdf"
+    },
+    {
+      "id": "bambot",
+      "brand": "Bambot",
+      "name": "Bambot",
+      "tipLinks": [
+        "left_wheel",
+        "right_wheel"
+      ],
+      "category": "biped",
+      "dof": 15,
+      "upstream": "bambot_description",
+      "urdf": "models/bambot/robot.urdf"
+    },
+    {
+      "id": "barrett_hand",
+      "brand": "Barrett",
+      "name": "BH8-282",
+      "tipLinks": [
+        "finger_1_tip_link",
+        "finger_2_tip_link",
+        "finger_3_tip_link"
+      ],
+      "category": "hand",
+      "dof": 8,
+      "upstream": "barrett_hand_description",
+      "urdf": "models/barrett_hand/robot.urdf"
+    },
+    {
+      "id": "baxter",
+      "brand": "Rethink",
+      "name": "Baxter",
+      "tipLinks": [
+        "left_gripper",
+        "right_gripper"
+      ],
+      "category": "dual_arm",
+      "dof": 15,
+      "upstream": "baxter_description",
+      "urdf": "models/baxter/robot.urdf"
+    },
+    {
+      "id": "berkeley_humanoid",
+      "brand": "UC Berkeley",
+      "name": "Berkeley Humanoid",
+      "tipLinks": [
+        "LL_FOOT",
+        "LR_FOOT"
+      ],
+      "category": "humanoid",
+      "dof": 12,
+      "upstream": "berkeley_humanoid_description",
+      "urdf": "models/berkeley_humanoid/robot.urdf"
+    },
+    {
+      "id": "bolt",
+      "brand": "ODRI",
+      "name": "Bolt",
+      "tipLinks": [
+        "FL_FOOT",
+        "FR_FOOT"
+      ],
+      "category": "biped",
+      "dof": 6,
+      "upstream": "bolt_description",
+      "urdf": "models/bolt/robot.urdf"
+    },
+    {
+      "id": "booster_t1",
+      "brand": "Booster",
+      "name": "T1",
+      "tipLinks": [
+        "left_hand_tip",
+        "right_hand_tip",
+        "left_foot_link",
+        "right_foot_link"
+      ],
+      "category": "humanoid",
+      "dof": 23,
+      "upstream": "booster_t1_description",
+      "urdf": "models/booster_t1/robot.urdf"
+    },
+    {
+      "id": "cassie",
+      "brand": "Agility",
+      "name": "Cassie",
+      "tipLinks": [
+        "leftfoot",
+        "rightfoot"
+      ],
+      "category": "biped",
+      "dof": 16,
+      "upstream": "cassie_description",
+      "urdf": "models/cassie/robot.urdf"
+    },
+    {
+      "id": "cf2",
+      "brand": "Bitcraze",
+      "name": "Crazyflie 2.0",
+      "tipLinks": [
+        "prop0_link"
+      ],
+      "category": "drone",
+      "dof": 0,
+      "upstream": "cf2_description",
+      "urdf": "models/cf2/robot.urdf"
+    },
+    {
+      "id": "draco3",
+      "brand": "Apptronik",
+      "name": "Draco 3",
+      "tipLinks": [
+        "l_hand_contact",
+        "r_hand_contact",
+        "l_foot_contact",
+        "r_foot_contact"
+      ],
+      "category": "humanoid",
+      "dof": 27,
+      "upstream": "draco3_description",
+      "urdf": "models/draco3/robot.urdf"
+    },
+    {
+      "id": "edo",
+      "brand": "Comau",
+      "name": "e.DO",
+      "tipLinks": [
+        "link_6"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "edo_description",
+      "urdf": "models/edo/robot.urdf"
+    },
+    {
+      "id": "ergocub",
+      "brand": "IIT",
+      "name": "ergoCub",
+      "tipLinks": [
+        "l_hand_palm",
+        "r_hand_palm",
+        "l_sole",
+        "r_sole"
+      ],
+      "category": "humanoid",
+      "dof": 57,
+      "upstream": "ergocub_description",
+      "urdf": "models/ergocub/robot.urdf"
+    },
+    {
+      "id": "eve_r3",
+      "brand": "1X",
+      "name": "Eve R3",
+      "tipLinks": [
+        "l_palm",
+        "r_palm"
+      ],
+      "category": "humanoid",
+      "dof": 23,
+      "upstream": "eve_r3_description",
+      "urdf": "models/eve_r3/robot.urdf"
+    },
+    {
+      "id": "fetch",
+      "brand": "Fetch",
+      "name": "Fetch",
+      "tipLinks": [
+        "gripper_link"
+      ],
+      "category": "mobile",
+      "dof": 14,
+      "upstream": "fetch_description",
+      "urdf": "models/fetch/robot.urdf"
+    },
+    {
+      "id": "finger_edu",
+      "brand": "ODRI",
+      "name": "FingerEdu",
+      "tipLinks": [
+        "finger_tip_link"
+      ],
+      "category": "hand",
+      "dof": 3,
+      "upstream": "finger_edu_description",
+      "urdf": "models/finger_edu/robot.urdf"
+    },
+    {
+      "id": "g1",
+      "brand": "Unitree",
+      "name": "G1",
+      "tipLinks": [
+        "left_rubber_hand",
+        "right_rubber_hand",
+        "left_ankle_roll_link",
+        "right_ankle_roll_link"
+      ],
+      "category": "humanoid",
+      "dof": 29,
+      "upstream": "g1_description",
+      "urdf": "models/g1/robot.urdf"
+    },
+    {
+      "id": "gen2",
+      "brand": "Kinova",
+      "name": "Gen2",
+      "tipLinks": [
+        "j2s6s200_end_effector"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "gen2_description",
+      "urdf": "models/gen2/robot.urdf"
+    },
+    {
+      "id": "gen3_lite",
+      "brand": "Kinova",
+      "name": "Gen3 Lite",
+      "tipLinks": [
+        "end_effector_link"
+      ],
+      "category": "arm",
+      "dof": 10,
+      "upstream": "gen3_lite_description",
+      "urdf": "models/gen3_lite/robot.urdf"
+    },
+    {
+      "id": "go1",
+      "brand": "Unitree",
+      "name": "Go1",
+      "tipLinks": [
+        "FR_foot",
+        "FL_foot",
+        "RR_foot",
+        "RL_foot"
+      ],
+      "category": "quadruped",
+      "dof": 12,
+      "upstream": "go1_description",
+      "urdf": "models/go1/robot.urdf"
+    },
+    {
+      "id": "go2",
+      "brand": "Unitree",
+      "name": "Go2",
+      "tipLinks": [
+        "FR_foot",
+        "FL_foot",
+        "RR_foot",
+        "RL_foot"
+      ],
+      "category": "quadruped",
+      "dof": 12,
+      "upstream": "go2_description",
+      "urdf": "models/go2/robot.urdf"
+    },
+    {
+      "id": "gr1",
+      "brand": "Fourier",
+      "name": "GR-1",
+      "tipLinks": [
+        "left_end_effector_link",
+        "right_end_effector_link",
+        "left_foot_roll_link",
+        "right_foot_roll_link"
+      ],
+      "category": "humanoid",
+      "dof": 32,
+      "upstream": "gr1_description",
+      "urdf": "models/gr1/robot.urdf"
+    },
+    {
+      "id": "h1",
+      "brand": "Unitree",
+      "name": "H1",
+      "tipLinks": [
+        "left_elbow_link",
+        "right_elbow_link",
+        "left_ankle_link",
+        "right_ankle_link"
+      ],
+      "category": "humanoid",
+      "dof": 19,
+      "upstream": "h1_description",
+      "urdf": "models/h1/robot.urdf"
+    },
+    {
+      "id": "h1_2",
+      "brand": "Unitree",
+      "name": "H1-2",
+      "tipLinks": [
+        "left_wrist_yaw_link",
+        "right_wrist_yaw_link",
+        "left_ankle_roll_link",
+        "right_ankle_roll_link"
+      ],
+      "category": "humanoid",
+      "dof": 51,
+      "upstream": "h1_2_description",
+      "urdf": "models/h1_2/robot.urdf"
+    },
+    {
+      "id": "hyq",
+      "brand": "IIT",
+      "name": "HyQ",
+      "tipLinks": [
+        "lf_foot",
+        "rf_foot",
+        "lh_foot",
+        "rh_foot"
+      ],
+      "category": "quadruped",
+      "dof": 12,
+      "upstream": "hyq_description",
+      "urdf": "models/hyq/robot.urdf",
+      "weight": 80
+    },
+    {
+      "id": "icub",
+      "brand": "IIT",
+      "name": "iCub",
+      "tipLinks": [
+        "l_hand",
+        "r_hand",
+        "l_sole",
+        "r_sole"
+      ],
+      "category": "humanoid",
+      "dof": 32,
+      "upstream": "icub_description",
+      "urdf": "models/icub/robot.urdf"
+    },
+    {
+      "id": "iiwa14",
+      "brand": "KUKA",
+      "name": "LBR iiwa 14",
+      "tipLinks": [
+        "iiwa_link_ee"
+      ],
+      "category": "arm",
+      "dof": 7,
+      "upstream": "iiwa14_description",
+      "urdf": "models/iiwa14/robot.urdf",
+      "reach": 0.82,
+      "weight": 30,
+      "payload": 14
+    },
+    {
+      "id": "iiwa7",
+      "brand": "KUKA",
+      "name": "LBR iiwa 7",
+      "tipLinks": [
+        "iiwa_link_ee"
+      ],
+      "category": "arm",
+      "dof": 7,
+      "upstream": "iiwa7_description",
+      "urdf": "models/iiwa7/robot.urdf",
+      "reach": 0.8,
+      "weight": 23.9,
+      "payload": 7
+    },
+    {
+      "id": "jaxon",
+      "brand": "JSK",
+      "name": "JAXON",
+      "tipLinks": [
+        "LARM_LINK7",
+        "RARM_LINK7",
+        "LLEG_LINK5",
+        "RLEG_LINK5"
+      ],
+      "category": "humanoid",
+      "dof": 38,
+      "upstream": "jaxon_description",
+      "urdf": "models/jaxon/robot.urdf"
+    },
+    {
+      "id": "jvrc",
+      "brand": "AIST",
+      "name": "JVRC-1",
+      "tipLinks": [
+        "l_wrist",
+        "r_wrist",
+        "l_ankle",
+        "r_ankle"
+      ],
+      "category": "humanoid",
+      "dof": 44,
+      "upstream": "jvrc_description",
+      "urdf": "models/jvrc/robot.urdf"
+    },
+    {
+      "id": "laikago",
+      "brand": "Unitree",
+      "name": "Laikago",
+      "tipLinks": [
+        "FR_calf",
+        "FL_calf",
+        "RR_calf",
+        "RL_calf"
+      ],
+      "category": "quadruped",
+      "dof": 12,
+      "upstream": "laikago_description",
+      "urdf": "models/laikago/robot.urdf"
+    },
+    {
+      "id": "leap_hand_v1",
+      "brand": "CMU",
+      "name": "LEAP Hand",
+      "tipLinks": [
+        "fingertip",
+        "fingertip_2",
+        "fingertip_3",
+        "thumb_fingertip"
+      ],
+      "category": "hand",
+      "dof": 16,
+      "upstream": "leap_hand_v1_description",
+      "urdf": "models/leap_hand_v1/robot.urdf"
+    },
+    {
+      "id": "mini_cheetah",
+      "brand": "MIT",
+      "name": "Mini Cheetah",
+      "tipLinks": [
+        "toe_fr",
+        "toe_fl",
+        "toe_hr",
+        "toe_hl"
+      ],
+      "category": "quadruped",
+      "dof": 12,
+      "upstream": "mini_cheetah_description",
+      "urdf": "models/mini_cheetah/robot.urdf"
+    },
+    {
+      "id": "minitaur",
+      "brand": "Ghost Robotics",
+      "name": "Minitaur",
+      "tipLinks": [
+        "motor_front_leftR_link"
+      ],
+      "category": "quadruped",
+      "dof": 16,
+      "upstream": "minitaur_description",
+      "urdf": "models/minitaur/robot.urdf"
+    },
+    {
+      "id": "n1",
+      "brand": "Fourier",
+      "name": "N1",
+      "tipLinks": [
+        "left_end_effector_link",
+        "right_end_effector_link",
+        "left_foot_roll_link",
+        "right_foot_roll_link"
+      ],
+      "category": "humanoid",
+      "dof": 23,
+      "upstream": "n1_description",
+      "urdf": "models/n1/robot.urdf"
+    },
+    {
+      "id": "nextage",
+      "brand": "KAWADA",
+      "name": "NEXTAGE",
+      "tipLinks": [
+        "LARM_JOINT5_Link",
+        "RARM_JOINT5_Link"
+      ],
+      "category": "dual_arm",
+      "dof": 15,
+      "upstream": "nextage_description",
+      "urdf": "models/nextage/robot.urdf"
+    },
+    {
+      "id": "open_manipulator_x",
+      "brand": "ROBOTIS",
+      "name": "OpenManipulator-X",
+      "tipLinks": [
+        "end_effector_link"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "open_manipulator_x_description",
+      "urdf": "models/open_manipulator_x/robot.urdf"
+    },
+    {
+      "id": "panda",
+      "brand": "Franka",
+      "name": "Panda",
+      "tipLinks": [
+        "panda_hand"
+      ],
+      "category": "arm",
+      "dof": 9,
+      "upstream": "panda_description",
+      "urdf": "models/panda/robot.urdf",
+      "reach": 0.855,
+      "weight": 18,
+      "payload": 3
+    },
+    {
+      "id": "pepper",
+      "brand": "SoftBank",
+      "name": "Pepper",
+      "tipLinks": [
+        "l_wrist",
+        "r_wrist"
+      ],
+      "category": "mobile",
+      "dof": 45,
+      "upstream": "pepper_description",
+      "urdf": "models/pepper/robot.urdf"
+    },
+    {
+      "id": "piper",
+      "brand": "Agilex",
+      "name": "Piper",
+      "tipLinks": [
+        "link6"
+      ],
+      "category": "arm",
+      "dof": 8,
+      "upstream": "piper_description",
+      "urdf": "models/piper/robot.urdf"
+    },
+    {
+      "id": "poppy_ergo_jr",
+      "brand": "Poppy",
+      "name": "Ergo Jr",
+      "tipLinks": [
+        "fixed_tip"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "poppy_ergo_jr_description",
+      "urdf": "models/poppy_ergo_jr/robot.urdf"
+    },
+    {
+      "id": "poppy_torso",
+      "brand": "Poppy",
+      "name": "Torso",
+      "tipLinks": [
+        "l_forearm",
+        "r_forearm"
+      ],
+      "category": "humanoid",
+      "dof": 13,
+      "upstream": "poppy_torso_description",
+      "urdf": "models/poppy_torso/robot.urdf"
+    },
+    {
+      "id": "pr2",
+      "brand": "Willow Garage",
+      "name": "PR2",
+      "tipLinks": [
+        "l_gripper_palm_link",
+        "r_gripper_palm_link"
+      ],
+      "category": "mobile",
+      "dof": 38,
+      "upstream": "pr2_description",
+      "urdf": "models/pr2/robot.urdf"
+    },
+    {
+      "id": "r2",
+      "brand": "NASA",
+      "name": "Robonaut 2",
+      "tipLinks": [
+        "r2/left_palm",
+        "r2/right_palm",
+        "r2/left_leg_foot",
+        "r2/right_leg_foot"
+      ],
+      "category": "humanoid",
+      "dof": 56,
+      "upstream": "r2_description",
+      "urdf": "models/r2/robot.urdf"
+    },
+    {
+      "id": "reachy",
+      "brand": "Pollen",
+      "name": "Reachy",
+      "tipLinks": [
+        "left_tip",
+        "right_tip"
+      ],
+      "category": "mobile",
+      "dof": 21,
+      "upstream": "reachy_description",
+      "urdf": "models/reachy/robot.urdf"
+    },
+    {
+      "id": "robotiq_2f85",
+      "brand": "Robotiq",
+      "name": "2F-85",
+      "tipLinks": [
+        "left_inner_finger_tip",
+        "right_inner_finger_tip"
+      ],
+      "category": "hand",
+      "dof": 6,
+      "upstream": "robotiq_2f85_description",
+      "urdf": "models/robotiq_2f85/robot.urdf"
+    },
+    {
+      "id": "romeo",
+      "brand": "SoftBank",
+      "name": "Romeo",
+      "tipLinks": [
+        "l_gripper",
+        "r_gripper",
+        "l_sole",
+        "r_sole"
+      ],
+      "category": "humanoid",
+      "dof": 61,
+      "upstream": "romeo_description",
+      "urdf": "models/romeo/robot.urdf"
+    },
+    {
+      "id": "sigmaban",
+      "brand": "Rhoban",
+      "name": "Sigmaban",
+      "tipLinks": [
+        "left_foot_tip",
+        "right_foot_tip"
+      ],
+      "category": "humanoid",
+      "dof": 20,
+      "upstream": "sigmaban_description",
+      "urdf": "models/sigmaban/robot.urdf"
+    },
+    {
+      "id": "skydio_x2",
+      "brand": "Skydio",
+      "name": "X2",
+      "tipLinks": [
+        "x2"
+      ],
+      "category": "drone",
+      "dof": 0,
+      "upstream": "skydio_x2_description",
+      "urdf": "models/skydio_x2/robot.urdf"
+    },
+    {
+      "id": "so_arm100",
+      "brand": "SO",
+      "name": "ARM100",
+      "tipLinks": [
+        "jaw"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "so_arm100_description",
+      "urdf": "models/so_arm100/robot.urdf"
+    },
+    {
+      "id": "solo",
+      "brand": "ODRI",
+      "name": "Solo",
+      "tipLinks": [
+        "FL_FOOT",
+        "FR_FOOT",
+        "HL_FOOT",
+        "HR_FOOT"
+      ],
+      "category": "quadruped",
+      "dof": 12,
+      "upstream": "solo_description",
+      "urdf": "models/solo/robot.urdf"
+    },
+    {
+      "id": "stretch",
+      "brand": "Hello Robot",
+      "name": "Stretch RE1",
+      "tipLinks": [
+        "link_straight_gripper"
+      ],
+      "category": "mobile",
+      "dof": 14,
+      "upstream": "stretch_description",
+      "urdf": "models/stretch/robot.urdf"
+    },
+    {
+      "id": "talos",
+      "brand": "PAL Robotics",
+      "name": "TALOS",
+      "tipLinks": [
+        "wrist_left_ft_tool_link",
+        "wrist_right_ft_tool_link",
+        "left_sole_link",
+        "right_sole_link"
+      ],
+      "category": "humanoid",
+      "dof": 44,
+      "upstream": "talos_description",
+      "urdf": "models/talos/robot.urdf",
+      "weight": 95
+    },
+    {
+      "id": "tiago",
+      "brand": "PAL Robotics",
+      "name": "TIAGo",
+      "tipLinks": [
+        "wrist_ft_tool_link"
+      ],
+      "category": "mobile",
+      "dof": 48,
+      "upstream": "tiago_description",
+      "urdf": "models/tiago/robot.urdf",
+      "weight": 70
+    },
+    {
+      "id": "trifinger_edu",
+      "brand": "ODRI",
+      "name": "TriFingerEdu",
+      "tipLinks": [
+        "finger_tip_link_0",
+        "finger_tip_link_120",
+        "finger_tip_link_240"
+      ],
+      "category": "hand",
+      "dof": 9,
+      "upstream": "trifinger_edu_description",
+      "urdf": "models/trifinger_edu/robot.urdf"
+    },
+    {
+      "id": "upkie",
+      "brand": "Upkie",
+      "name": "Upkie",
+      "tipLinks": [
+        "left_wheel_tire",
+        "right_wheel_tire"
+      ],
+      "category": "wheeled",
+      "dof": 6,
+      "upstream": "upkie_description",
+      "urdf": "models/upkie/robot.urdf"
+    },
+    {
+      "id": "ur10",
+      "brand": "Universal Robots",
+      "name": "UR10",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "ur10_description",
+      "urdf": "models/ur10/robot.urdf",
+      "reach": 1.3,
+      "weight": 17,
+      "payload": 10
+    },
+    {
+      "id": "ur3",
+      "brand": "Universal Robots",
+      "name": "UR3",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "ur3_description",
+      "urdf": "models/ur3/robot.urdf",
+      "reach": 0.5,
+      "weight": 15,
+      "payload": 3
+    },
+    {
+      "id": "ur5",
+      "brand": "Universal Robots",
+      "name": "UR5",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "ur5_description",
+      "urdf": "models/ur5/robot.urdf",
+      "reach": 0.85,
+      "weight": 15,
+      "payload": 5
+    },
+    {
+      "id": "valkyrie",
+      "brand": "NASA",
+      "name": "Valkyrie",
+      "tipLinks": [
+        "leftPalm",
+        "rightPalm",
+        "leftFoot",
+        "rightFoot"
+      ],
+      "category": "humanoid",
+      "dof": 59,
+      "upstream": "valkyrie_description",
+      "urdf": "models/valkyrie/robot.urdf",
+      "weight": 136
+    },
+    {
+      "id": "yumi",
+      "brand": "ABB",
+      "name": "YuMi",
+      "tipLinks": [
+        "yumi_link_7_l",
+        "yumi_link_7_r"
+      ],
+      "category": "dual_arm",
+      "dof": 18,
+      "upstream": "yumi_description",
+      "urdf": "models/yumi/robot.urdf"
+    },
+    {
+      "id": "z1",
+      "brand": "Unitree",
+      "name": "Z1",
+      "tipLinks": [
+        "link06"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "z1_description",
+      "urdf": "models/z1/robot.urdf"
+    },
+    {
+      "id": "abb_irb120",
+      "brand": "ABB",
+      "name": "IRB 120-3/0.6",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "abb",
+      "urdf": "models/abb_irb120/robot.urdf",
+      "reach": 0.58,
+      "weight": 25,
+      "payload": 3
+    },
+    {
+      "id": "abb_irb1200",
+      "brand": "ABB",
+      "name": "IRB 1200-5/0.9",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "abb",
+      "urdf": "models/abb_irb1200/robot.urdf",
+      "reach": 0.901,
+      "weight": 54,
+      "payload": 5
+    },
+    {
+      "id": "abb_irb1600",
+      "brand": "ABB",
+      "name": "IRB 1600-6/1.2",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "abb",
+      "urdf": "models/abb_irb1600/robot.urdf",
+      "reach": 1.2,
+      "weight": 250,
+      "payload": 6
+    },
+    {
+      "id": "abb_irb2400",
+      "brand": "ABB",
+      "name": "IRB 2400/10",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 8,
+      "upstream": "abb",
+      "urdf": "models/abb_irb2400/robot.urdf",
+      "reach": 1.55,
+      "weight": 380,
+      "payload": 12
+    },
+    {
+      "id": "abb_irb2600",
+      "brand": "ABB",
+      "name": "IRB 2600-12/1.65",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "abb",
+      "urdf": "models/abb_irb2600/robot.urdf",
+      "reach": 1.65,
+      "weight": 272,
+      "payload": 12
+    },
+    {
+      "id": "abb_irb4400",
+      "brand": "ABB",
+      "name": "IRB 4400L/10",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "abb",
+      "urdf": "models/abb_irb4400/robot.urdf",
+      "reach": 2.53,
+      "weight": 1040,
+      "payload": 10
+    },
+    {
+      "id": "abb_irb4600",
+      "brand": "ABB",
+      "name": "IRB 4600-60/2.05",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "abb",
+      "urdf": "models/abb_irb4600/robot.urdf",
+      "reach": 2.05,
+      "weight": 425,
+      "payload": 60
+    },
+    {
+      "id": "abb_irb5400",
+      "brand": "ABB",
+      "name": "IRB 5400",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 7,
+      "upstream": "abb",
+      "urdf": "models/abb_irb5400/robot.urdf",
+      "reach": 3.129,
+      "weight": 970,
+      "payload": 25
+    },
+    {
+      "id": "abb_irb6640",
+      "brand": "ABB",
+      "name": "IRB 6640-235",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 8,
+      "upstream": "abb",
+      "urdf": "models/abb_irb6640/robot.urdf",
+      "reach": 2.55,
+      "weight": 1310,
+      "payload": 235
+    },
+    {
+      "id": "abb_irb7600",
+      "brand": "ABB",
+      "name": "IRB 7600-150/3.5",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "abb",
+      "urdf": "models/abb_irb7600/robot.urdf",
+      "reach": 3.5,
+      "weight": 2450,
+      "payload": 150
+    },
+    {
+      "id": "kuka_kr5_arc",
+      "brand": "KUKA",
+      "name": "KR 5 arc",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "kuka_experimental",
+      "urdf": "models/kuka_kr5_arc/robot.urdf",
+      "reach": 1.412,
+      "weight": 127,
+      "payload": 5
+    },
+    {
+      "id": "kuka_kr10r1100sixx",
+      "brand": "KUKA",
+      "name": "KR 10 R1100 sixx",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "kuka_experimental",
+      "urdf": "models/kuka_kr10r1100sixx/robot.urdf",
+      "reach": 1.101,
+      "weight": 55,
+      "payload": 10
+    },
+    {
+      "id": "kuka_kr16_2",
+      "brand": "KUKA",
+      "name": "KR 16-2",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "kuka_experimental",
+      "urdf": "models/kuka_kr16_2/robot.urdf",
+      "reach": 1.611,
+      "weight": 235,
+      "payload": 16
+    },
+    {
+      "id": "kuka_kr120r2500pro",
+      "brand": "KUKA",
+      "name": "KR 120 R2500 pro",
+      "tipLinks": [
+        "tool0"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "kuka_experimental",
+      "urdf": "models/kuka_kr120r2500pro/robot.urdf",
+      "reach": 2.496,
+      "weight": 1049,
+      "payload": 120
+    },
+    {
+      "id": "fanuc_crx3ia",
+      "brand": "FANUC",
+      "name": "CRX-3iA",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_crx3ia/robot.urdf",
+      "reach": 0.692,
+      "payload": 3
+    },
+    {
+      "id": "fanuc_crx5ia",
+      "brand": "FANUC",
+      "name": "CRX-5iA",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_crx5ia/robot.urdf",
+      "reach": 0.994,
+      "payload": 5
+    },
+    {
+      "id": "fanuc_crx10ia",
+      "brand": "FANUC",
+      "name": "CRX-10iA",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_crx10ia/robot.urdf",
+      "reach": 1.249,
+      "payload": 10
+    },
+    {
+      "id": "fanuc_crx10ia_l",
+      "brand": "FANUC",
+      "name": "CRX-10iA/L",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_crx10ia_l/robot.urdf",
+      "reach": 1.418,
+      "payload": 10
+    },
+    {
+      "id": "fanuc_crx10ia_lp",
+      "brand": "FANUC",
+      "name": "CRX-10iA/L(P)",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_crx10ia_lp/robot.urdf",
+      "reach": 1.418,
+      "payload": 10
+    },
+    {
+      "id": "fanuc_crx20ia_l",
+      "brand": "FANUC",
+      "name": "CRX-20iA/L",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_crx20ia_l/robot.urdf",
+      "reach": 1.418,
+      "payload": 20
+    },
+    {
+      "id": "fanuc_crx30ia",
+      "brand": "FANUC",
+      "name": "CRX-30iA",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_crx30ia/robot.urdf",
+      "reach": 1.756,
+      "payload": 30
+    },
+    {
+      "id": "fanuc_er4ia",
+      "brand": "FANUC",
+      "name": "ER-4iA",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_er4ia/robot.urdf",
+      "reach": 0.55,
+      "payload": 4
+    },
+    {
+      "id": "fanuc_lrmate200id",
+      "brand": "FANUC",
+      "name": "LR Mate 200iD",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_lrmate200id/robot.urdf",
+      "reach": 0.717,
+      "payload": 7
+    },
+    {
+      "id": "fanuc_lrmate200id_4s",
+      "brand": "FANUC",
+      "name": "LR Mate 200iD/4S",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_lrmate200id_4s/robot.urdf",
+      "reach": 0.55,
+      "payload": 4
+    },
+    {
+      "id": "fanuc_lrmate200id_7c",
+      "brand": "FANUC",
+      "name": "LR Mate 200iD/7C",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_lrmate200id_7c/robot.urdf",
+      "reach": 0.717,
+      "payload": 7
+    },
+    {
+      "id": "fanuc_lrmate200id_7l",
+      "brand": "FANUC",
+      "name": "LR Mate 200iD/7L",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_lrmate200id_7l/robot.urdf",
+      "reach": 0.911,
+      "payload": 7
+    },
+    {
+      "id": "fanuc_lrmate200id_7lc",
+      "brand": "FANUC",
+      "name": "LR Mate 200iD/7LC",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_lrmate200id_7lc/robot.urdf",
+      "reach": 0.911,
+      "payload": 7
+    },
+    {
+      "id": "fanuc_lrmate200id_7we",
+      "brand": "FANUC",
+      "name": "LR Mate 200iD/7WE",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_lrmate200id_7we/robot.urdf",
+      "reach": 0.717,
+      "payload": 7
+    },
+    {
+      "id": "fanuc_lrmate10_11a",
+      "brand": "FANUC",
+      "name": "LR Mate 10-11A",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_lrmate10_11a/robot.urdf",
+      "reach": 1.101,
+      "payload": 10
+    },
+    {
+      "id": "fanuc_lrmate10_11afc",
+      "brand": "FANUC",
+      "name": "LR Mate 10-11A(FC)",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_lrmate10_11afc/robot.urdf",
+      "reach": 1.101,
+      "payload": 10
+    },
+    {
+      "id": "fanuc_lrmate25_19a",
+      "brand": "FANUC",
+      "name": "LR Mate 25-19A",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_lrmate25_19a/robot.urdf",
+      "reach": 1.853,
+      "payload": 25
+    },
+    {
+      "id": "fanuc_lrmate25_19afc",
+      "brand": "FANUC",
+      "name": "LR Mate 25-19A(FC)",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_lrmate25_19afc/robot.urdf",
+      "reach": 1.853,
+      "payload": 25
+    },
+    {
+      "id": "fanuc_lrmate35_14a",
+      "brand": "FANUC",
+      "name": "LR Mate 35-14A",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_lrmate35_14a/robot.urdf",
+      "reach": 1.445,
+      "payload": 35
+    },
+    {
+      "id": "fanuc_m10_8_20d",
+      "brand": "FANUC",
+      "name": "M-10/8-20D",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m10_8_20d/robot.urdf",
+      "reach": 2.032,
+      "payload": 8
+    },
+    {
+      "id": "fanuc_m10_10_16d",
+      "brand": "FANUC",
+      "name": "M-10/10-16D",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m10_10_16d/robot.urdf",
+      "reach": 1.636,
+      "payload": 10
+    },
+    {
+      "id": "fanuc_m10_12_14d",
+      "brand": "FANUC",
+      "name": "M-10/12-14D",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m10_12_14d/robot.urdf",
+      "reach": 1.441,
+      "payload": 12
+    },
+    {
+      "id": "fanuc_m10_16_11d",
+      "brand": "FANUC",
+      "name": "M-10/16-11D",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m10_16_11d/robot.urdf",
+      "reach": 1.103,
+      "payload": 16
+    },
+    {
+      "id": "fanuc_m20_12_23d",
+      "brand": "FANUC",
+      "name": "M-20/12-23D",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m20_12_23d/robot.urdf",
+      "reach": 2.272,
+      "payload": 12
+    },
+    {
+      "id": "fanuc_m20_25_18d",
+      "brand": "FANUC",
+      "name": "M-20/25-18D",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m20_25_18d/robot.urdf",
+      "reach": 1.831,
+      "payload": 25
+    },
+    {
+      "id": "fanuc_m20_35_18d",
+      "brand": "FANUC",
+      "name": "M-20/35-18D",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m20_35_18d/robot.urdf",
+      "reach": 1.831,
+      "payload": 35
+    },
+    {
+      "id": "fanuc_m710ic_12l",
+      "brand": "FANUC",
+      "name": "M-710iC/12L",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m710ic_12l/robot.urdf",
+      "reach": 3.123,
+      "payload": 12
+    },
+    {
+      "id": "fanuc_m710ic_20l",
+      "brand": "FANUC",
+      "name": "M-710iC/20L",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m710ic_20l/robot.urdf",
+      "reach": 3.11,
+      "payload": 20
+    },
+    {
+      "id": "fanuc_m710ic_20m",
+      "brand": "FANUC",
+      "name": "M-710iC/20M",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m710ic_20m/robot.urdf",
+      "reach": 2.582,
+      "payload": 20
+    },
+    {
+      "id": "fanuc_m710ic_45m",
+      "brand": "FANUC",
+      "name": "M-710iC/45M",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m710ic_45m/robot.urdf",
+      "reach": 2.606,
+      "payload": 45
+    },
+    {
+      "id": "fanuc_m710ic_50",
+      "brand": "FANUC",
+      "name": "M-710iC/50",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m710ic_50/robot.urdf",
+      "reach": 2.05,
+      "payload": 50
+    },
+    {
+      "id": "fanuc_m710ic_50e",
+      "brand": "FANUC",
+      "name": "M-710iC/50E",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m710ic_50e/robot.urdf",
+      "reach": 2.05,
+      "payload": 50
+    },
+    {
+      "id": "fanuc_m710ic_50s",
+      "brand": "FANUC",
+      "name": "M-710iC/50S",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m710ic_50s/robot.urdf",
+      "reach": 1.359,
+      "payload": 50
+    },
+    {
+      "id": "fanuc_m710ic_70",
+      "brand": "FANUC",
+      "name": "M-710iC/70",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m710ic_70/robot.urdf",
+      "reach": 2.05,
+      "payload": 70
+    },
+    {
+      "id": "fanuc_m710id_50m",
+      "brand": "FANUC",
+      "name": "M-710iD/50M",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m710id_50m/robot.urdf",
+      "reach": 2.606,
+      "payload": 50
+    },
+    {
+      "id": "fanuc_m710id_70",
+      "brand": "FANUC",
+      "name": "M-710iD/70",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m710id_70/robot.urdf",
+      "reach": 2.104,
+      "payload": 70
+    },
+    {
+      "id": "fanuc_m800_60_20b",
+      "brand": "FANUC",
+      "name": "M-800/60-20B",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_m800_60_20b/robot.urdf",
+      "reach": 2.04,
+      "payload": 60
+    },
+    {
+      "id": "fanuc_p350ia_45_lh",
+      "brand": "FANUC",
+      "name": "P-350iA/45 (LH)",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_p350ia_45_lh/robot.urdf",
+      "reach": 2.606,
+      "payload": 45
+    },
+    {
+      "id": "fanuc_p350ia_45_rh",
+      "brand": "FANUC",
+      "name": "P-350iA/45 (RH)",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_p350ia_45_rh/robot.urdf",
+      "reach": 2.606,
+      "payload": 45
+    },
+    {
+      "id": "fanuc_r1000ia_80f",
+      "brand": "FANUC",
+      "name": "R-1000iA/80F",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r1000ia_80f/robot.urdf",
+      "reach": 2.23,
+      "payload": 80
+    },
+    {
+      "id": "fanuc_r1000ia_100f",
+      "brand": "FANUC",
+      "name": "R-1000iA/100F",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r1000ia_100f/robot.urdf",
+      "reach": 2.23,
+      "payload": 100
+    },
+    {
+      "id": "fanuc_r1000ia_130f",
+      "brand": "FANUC",
+      "name": "R-1000iA/130F",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r1000ia_130f/robot.urdf",
+      "reach": 2.23,
+      "payload": 130
+    },
+    {
+      "id": "fanuc_r2000ic_100p",
+      "brand": "FANUC",
+      "name": "R-2000iC/100P",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000ic_100p/robot.urdf",
+      "reach": 3.54,
+      "payload": 100
+    },
+    {
+      "id": "fanuc_r2000ic_100ph",
+      "brand": "FANUC",
+      "name": "R-2000iC/100PH",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000ic_100ph/robot.urdf",
+      "reach": 3.54,
+      "payload": 100
+    },
+    {
+      "id": "fanuc_r2000ic_125l",
+      "brand": "FANUC",
+      "name": "R-2000iC/125L",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000ic_125l/robot.urdf",
+      "reach": 3.1,
+      "payload": 125
+    },
+    {
+      "id": "fanuc_r2000ic_165f",
+      "brand": "FANUC",
+      "name": "R-2000iC/165F",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000ic_165f/robot.urdf",
+      "reach": 2.655,
+      "payload": 165
+    },
+    {
+      "id": "fanuc_r2000ic_165r",
+      "brand": "FANUC",
+      "name": "R-2000iC/165R",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000ic_165r/robot.urdf",
+      "reach": 3.095,
+      "payload": 165
+    },
+    {
+      "id": "fanuc_r2000ic_190s",
+      "brand": "FANUC",
+      "name": "R-2000iC/190S",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000ic_190s/robot.urdf",
+      "reach": 2.04,
+      "payload": 190
+    },
+    {
+      "id": "fanuc_r2000ic_190u",
+      "brand": "FANUC",
+      "name": "R-2000iC/190U",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000ic_190u/robot.urdf",
+      "reach": 2.518,
+      "payload": 190
+    },
+    {
+      "id": "fanuc_r2000ic_210f",
+      "brand": "FANUC",
+      "name": "R-2000iC/210F",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000ic_210f/robot.urdf",
+      "reach": 2.655,
+      "payload": 210
+    },
+    {
+      "id": "fanuc_r2000ic_210l",
+      "brand": "FANUC",
+      "name": "R-2000iC/210L",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000ic_210l/robot.urdf",
+      "reach": 3.1,
+      "payload": 210
+    },
+    {
+      "id": "fanuc_r2000ic_210r",
+      "brand": "FANUC",
+      "name": "R-2000iC/210R",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000ic_210r/robot.urdf",
+      "reach": 3.095,
+      "payload": 210
+    },
+    {
+      "id": "fanuc_r2000ic_210we",
+      "brand": "FANUC",
+      "name": "R-2000iC/210WE",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000ic_210we/robot.urdf",
+      "reach": 2.45,
+      "payload": 210
+    },
+    {
+      "id": "fanuc_r2000ic_220u",
+      "brand": "FANUC",
+      "name": "R-2000iC/220U",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000ic_220u/robot.urdf",
+      "reach": 2.518,
+      "payload": 220
+    },
+    {
+      "id": "fanuc_r2000ic_240f",
+      "brand": "FANUC",
+      "name": "R-2000iC/240F",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000ic_240f/robot.urdf",
+      "reach": 2.655,
+      "payload": 240
+    },
+    {
+      "id": "fanuc_r2000ic_270f",
+      "brand": "FANUC",
+      "name": "R-2000iC/270F",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000ic_270f/robot.urdf",
+      "reach": 2.655,
+      "payload": 270
+    },
+    {
+      "id": "fanuc_r2000ic_270r",
+      "brand": "FANUC",
+      "name": "R-2000iC/270R",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000ic_270r/robot.urdf",
+      "reach": 3.095,
+      "payload": 270
+    },
+    {
+      "id": "fanuc_r2000id_100fh",
+      "brand": "FANUC",
+      "name": "R-2000iD/100FH",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000id_100fh/robot.urdf",
+      "reach": 2.605,
+      "payload": 100
+    },
+    {
+      "id": "fanuc_r2000id_165fh",
+      "brand": "FANUC",
+      "name": "R-2000iD/165FH",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000id_165fh/robot.urdf",
+      "reach": 2.605,
+      "payload": 165
+    },
+    {
+      "id": "fanuc_r2000id_210fh",
+      "brand": "FANUC",
+      "name": "R-2000iD/210FH",
+      "tipLinks": [
+        "flange"
+      ],
+      "category": "arm",
+      "dof": 6,
+      "upstream": "fanuc_description",
+      "urdf": "models/fanuc_r2000id_210fh/robot.urdf",
+      "reach": 2.605,
+      "payload": 210
+    }
+  ]
+}

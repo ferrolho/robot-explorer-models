@@ -1,4 +1,4 @@
-# Robot catalog — 145 robots
+# Robot catalog — 146 robots
 # Sources: robot_descriptions.py, ros-industrial, FANUC-CORPORATION
 
 robots:
@@ -566,6 +566,26 @@ robots:
   - FR_FOOT
   - HL_FOOT
   - HR_FOOT
+# TODO: spot_description repo is moving from bdaiinstitute to RAI-Opensource (~April 2026).
+#       Update the git_repo URL once the migration is complete.
+#       See https://github.com/bdaiinstitute/spot_description
+- id: spot
+  brand: Boston Dynamics
+  name: Spot
+  category: quadruped
+  tipLinks:
+  - front_left_foot
+  - front_right_foot
+  - rear_left_foot
+  - rear_right_foot
+  tipFrames:
+    front_left_foot: { parent: front_left_lower_leg, xyz: "0 0 -0.3365" }
+    front_right_foot: { parent: front_right_lower_leg, xyz: "0 0 -0.3365" }
+    rear_left_foot: { parent: rear_left_lower_leg, xyz: "0 0 -0.3365" }
+    rear_right_foot: { parent: rear_right_lower_leg, xyz: "0 0 -0.3365" }
+  git_repo: {url: "https://github.com/bdaiinstitute/spot_description.git", branch: main, name: spot_description}
+  package: spot_description
+  xacro: spot_description/urdf/spot.urdf.xacro
 - id: stretch
   module: stretch_description
   brand: Hello Robot

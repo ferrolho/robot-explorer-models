@@ -401,6 +401,39 @@ def process_robot(robot: dict) -> dict | None:
             except ET.ParseError:
                 pass
 
+        # Copy MTL and textures referenced by OBJ files
+        elif resolved.suffix.lower() == ".obj":
+            try:
+                obj_text = resolved.read_text()
+            except UnicodeDecodeError:
+                obj_text = ""
+            for line in obj_text.splitlines():
+                if line.strip().startswith("mtllib "):
+                    mtl_name = line.strip().split(None, 1)[1]
+                    mtl_src = resolved.parent / mtl_name
+                    if not mtl_src.exists():
+                        continue
+                    mtl_out = meshes_dir / mtl_name
+                    if not mtl_out.exists():
+                        shutil.copy2(mtl_src, mtl_out)
+                    # Parse MTL for texture map references
+                    try:
+                        mtl_text = mtl_src.read_text()
+                    except UnicodeDecodeError:
+                        continue
+                    for mtl_line in mtl_text.splitlines():
+                        parts = mtl_line.strip().split(None, 1)
+                        if len(parts) == 2 and parts[0] in (
+                            "map_Kd", "map_Ks", "map_Ka", "map_Ns",
+                            "map_d", "map_bump", "bump", "disp", "decal",
+                        ):
+                            tex_name = parts[1].strip()
+                            tex_src = mtl_src.parent / tex_name
+                            if tex_src.exists():
+                                tex_out = meshes_dir / tex_src.name
+                                if not tex_out.exists():
+                                    shutil.copy2(tex_src, tex_out)
+
         mesh_map[filename] = f"meshes/{out_name}"
         print(f"  {resolved.name} ({resolved.suffix}) -> meshes/{out_name}")
 

@@ -186,6 +186,12 @@ def rewrite_urdf(urdf_path: Path, output_path: Path, mesh_map: dict[str, str],
                     origin_el.set("xyz", "0 0 0")
                     origin_el.set("rpy", "0 0 0")
 
+    # Convert floating joints to fixed — unbounded 6-DOF bases aren't meaningful
+    # in the viewer and cause the IK solver to send the robot to infinity
+    for joint_el in root.iter("joint"):
+        if joint_el.get("type") == "floating":
+            joint_el.set("type", "fixed")
+
     # Convert continuous joints to revolute with ±π limits so the viewer can
     # generate bounded sliders (continuous joints have no limits to display)
     import math
@@ -406,8 +412,8 @@ def process_robot(robot: dict) -> dict | None:
     urdf_output = model_dir / "robot.urdf"
     rewrite_urdf(urdf_path, urdf_output, mesh_map, robot.get("tipFrames"))
 
-    # Step 5: Validate
-    actual_dof = count_non_fixed_joints(urdf_path)
+    # Step 5: Validate (count DOF from the rewritten URDF since we modify joint types)
+    actual_dof = count_non_fixed_joints(urdf_output)
     expected_dof = robot.get("dof")
     if expected_dof is not None and actual_dof != expected_dof:
         print(f"  WARNING: DOF mismatch — expected {expected_dof}, got {actual_dof}")

@@ -45,6 +45,11 @@ def clone_repo(url: str, branch: str, name: str) -> Path:
             ["git", "clone", "--depth", "1", "-b", branch, url, str(cache)],
             capture_output=True, check=True,
         )
+        # Pull LFS files if the repo uses them
+        subprocess.run(
+            ["git", "lfs", "pull"],
+            cwd=cache, capture_output=True,
+        )
     return cache
 
 
@@ -121,6 +126,25 @@ def rewrite_urdf(urdf_path: Path, output_path: Path, mesh_map: dict[str, str],
         filename = mesh_el.get("filename")
         if filename and filename in mesh_map:
             mesh_el.set("filename", mesh_map[filename])
+
+    # Normalize whitespace in numeric attributes (leading spaces break some parsers)
+    for tag in ("origin", "axis"):
+        for el in root.iter(tag):
+            for attr in ("xyz", "rpy"):
+                val = el.get(attr)
+                if val:
+                    el.set(attr, " ".join(val.split()))
+
+    # Zero out the mounting offset on the fixed joint from "world" to the robot base
+    # (some xacros place the robot above the origin to simulate a table/pedestal)
+    for joint_el in root.iter("joint"):
+        if joint_el.get("type") == "fixed":
+            parent_el = joint_el.find("parent")
+            if parent_el is not None and parent_el.get("link") == "world":
+                origin_el = joint_el.find("origin")
+                if origin_el is not None:
+                    origin_el.set("xyz", "0 0 0")
+                    origin_el.set("rpy", "0 0 0")
 
     # Normalize material alpha to 1.0 (some upstream URDFs use low alpha values)
     for color_el in root.iter("color"):
@@ -288,7 +312,14 @@ def process_robot(robot: dict) -> dict | None:
                 for old_ref, new_ref in replacements.items():
                     dae_text = dae_text.replace(old_ref, new_ref)
                     needs_write = True
-                # 3) Zero out high emission values that wash out textures
+                # 3) Force Y_UP so Three.js ColladaLoader doesn't add an
+                #    extra -90° X rotation (the URDF root already handles Z→Y)
+                dae_text = re.sub(
+                    r"<up_axis>Z_UP</up_axis>",
+                    "<up_axis>Y_UP</up_axis>", dae_text
+                )
+                needs_write = True
+                # 4) Zero out high emission values that wash out textures
                 def _fix_emission(m: re.Match) -> str:
                     vals = m.group(1).split()
                     if len(vals) == 4 and any(float(v) > 0.1 for v in vals[:3]):

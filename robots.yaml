@@ -1,5 +1,5 @@
-# Robot catalog — 71 robots from robot_descriptions
-# See https://github.com/robot-descriptions/robot_descriptions.py for upstream sources
+# Robot catalog — 145 robots
+# Sources: robot_descriptions.py, ros-industrial, FANUC-CORPORATION
 
 robots:
 - id: a1
@@ -223,14 +223,6 @@ robots:
   tipLinks:
   - l_palm
   - r_palm
-- id: fanuc_m710ic
-  module: fanuc_m710ic_description
-  brand: FANUC
-  name: M-710iC
-  category: arm
-  tipLinks:
-  - tool0
-  dof: 6
 - id: fetch
   module: fetch_description
   brand: Fetch
@@ -858,3 +850,623 @@ robots:
   git_repo: {url: "https://github.com/ros-industrial/kuka_experimental.git", branch: melodic-devel, name: kuka_experimental}
   package: kuka_kr120_support
   urdf: kuka_kr120_support/urdf/kr120r2500pro.urdf
+
+# ── FANUC (from FANUC-CORPORATION/fanuc_description, DAE visual meshes) ──
+
+# CRX series (collaborative)
+
+- id: fanuc_crx3ia
+  brand: FANUC
+  name: CRX-3iA
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_crx_description
+  xacro: fanuc_crx_description/robot/crx3ia.urdf.xacro
+
+- id: fanuc_crx5ia
+  brand: FANUC
+  name: CRX-5iA
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_crx_description
+  xacro: fanuc_crx_description/robot/crx5ia.urdf.xacro
+
+- id: fanuc_crx10ia
+  brand: FANUC
+  name: CRX-10iA
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_crx_description
+  xacro: fanuc_crx_description/robot/crx10ia.urdf.xacro
+
+- id: fanuc_crx10ia_l
+  brand: FANUC
+  name: CRX-10iA/L
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_crx_description
+  xacro: fanuc_crx_description/robot/crx10ia_l.urdf.xacro
+
+- id: fanuc_crx10ia_lp
+  brand: FANUC
+  name: CRX-10iA/L(P)
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_crx_description
+  xacro: fanuc_crx_description/robot/crx10ia_lp.urdf.xacro
+
+- id: fanuc_crx20ia_l
+  brand: FANUC
+  name: CRX-20iA/L
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_crx_description
+  xacro: fanuc_crx_description/robot/crx20ia_l.urdf.xacro
+
+- id: fanuc_crx30ia
+  brand: FANUC
+  name: CRX-30iA
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_crx_description
+  xacro: fanuc_crx_description/robot/crx30ia.urdf.xacro
+
+# LR Mate series (small)
+
+- id: fanuc_er4ia
+  brand: FANUC
+  name: ER-4iA
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_lrmate_description
+  xacro: fanuc_lrmate_description/robot/er4ia.urdf.xacro
+
+- id: fanuc_lrmate200id
+  brand: FANUC
+  name: LR Mate 200iD
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_lrmate_description
+  xacro: fanuc_lrmate_description/robot/lrmate200id.urdf.xacro
+
+- id: fanuc_lrmate200id_4s
+  brand: FANUC
+  name: LR Mate 200iD/4S
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_lrmate_description
+  xacro: fanuc_lrmate_description/robot/lrmate200id4s.urdf.xacro
+
+- id: fanuc_lrmate200id_7c
+  brand: FANUC
+  name: LR Mate 200iD/7C
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_lrmate_description
+  xacro: fanuc_lrmate_description/robot/lrmate200id7c.urdf.xacro
+
+- id: fanuc_lrmate200id_7l
+  brand: FANUC
+  name: LR Mate 200iD/7L
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_lrmate_description
+  xacro: fanuc_lrmate_description/robot/lrmate200id7l.urdf.xacro
+
+- id: fanuc_lrmate200id_7lc
+  brand: FANUC
+  name: LR Mate 200iD/7LC
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_lrmate_description
+  xacro: fanuc_lrmate_description/robot/lrmate200id7lc.urdf.xacro
+
+- id: fanuc_lrmate200id_7we
+  brand: FANUC
+  name: LR Mate 200iD/7WE
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_lrmate_description
+  xacro: fanuc_lrmate_description/robot/lrmate200id7we.urdf.xacro
+
+- id: fanuc_lrmate10_11a
+  brand: FANUC
+  name: LR Mate 10-11A
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_lrmate_description
+  xacro: fanuc_lrmate_description/robot/lrmate10-11a.urdf.xacro
+
+- id: fanuc_lrmate10_11afc
+  brand: FANUC
+  name: LR Mate 10-11A(FC)
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_lrmate_description
+  xacro: fanuc_lrmate_description/robot/lrmate10-11afc.urdf.xacro
+
+- id: fanuc_lrmate25_19a
+  brand: FANUC
+  name: LR Mate 25-19A
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_lrmate_description
+  xacro: fanuc_lrmate_description/robot/lrmate25-19a.urdf.xacro
+
+- id: fanuc_lrmate25_19afc
+  brand: FANUC
+  name: LR Mate 25-19A(FC)
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_lrmate_description
+  xacro: fanuc_lrmate_description/robot/lrmate25-19afc.urdf.xacro
+
+- id: fanuc_lrmate35_14a
+  brand: FANUC
+  name: LR Mate 35-14A
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_lrmate_description
+  xacro: fanuc_lrmate_description/robot/lrmate35-14a.urdf.xacro
+
+# M-10 series (medium)
+
+- id: fanuc_m10_8_20d
+  brand: FANUC
+  name: M-10/8-20D
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m10_description
+  xacro: fanuc_m10_description/robot/m10_8-20d.urdf.xacro
+
+- id: fanuc_m10_10_16d
+  brand: FANUC
+  name: M-10/10-16D
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m10_description
+  xacro: fanuc_m10_description/robot/m10_10-16d.urdf.xacro
+
+- id: fanuc_m10_12_14d
+  brand: FANUC
+  name: M-10/12-14D
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m10_description
+  xacro: fanuc_m10_description/robot/m10_12-14d.urdf.xacro
+
+- id: fanuc_m10_16_11d
+  brand: FANUC
+  name: M-10/16-11D
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m10_description
+  xacro: fanuc_m10_description/robot/m10_16-11d.urdf.xacro
+
+# M-20 series (medium)
+
+- id: fanuc_m20_12_23d
+  brand: FANUC
+  name: M-20/12-23D
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m20_description
+  xacro: fanuc_m20_description/robot/m20_12-23d.urdf.xacro
+
+- id: fanuc_m20_25_18d
+  brand: FANUC
+  name: M-20/25-18D
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m20_description
+  xacro: fanuc_m20_description/robot/m20_25-18d.urdf.xacro
+
+- id: fanuc_m20_35_18d
+  brand: FANUC
+  name: M-20/35-18D
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m20_description
+  xacro: fanuc_m20_description/robot/m20_35-18d.urdf.xacro
+
+# M-710 series (large)
+
+- id: fanuc_m710ic_12l
+  brand: FANUC
+  name: M-710iC/12L
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m710_description
+  xacro: fanuc_m710_description/robot/m710ic_12l.urdf.xacro
+
+- id: fanuc_m710ic_20l
+  brand: FANUC
+  name: M-710iC/20L
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m710_description
+  xacro: fanuc_m710_description/robot/m710ic_20l.urdf.xacro
+
+- id: fanuc_m710ic_20m
+  brand: FANUC
+  name: M-710iC/20M
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m710_description
+  xacro: fanuc_m710_description/robot/m710ic_20m.urdf.xacro
+
+- id: fanuc_m710ic_45m
+  brand: FANUC
+  name: M-710iC/45M
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m710_description
+  xacro: fanuc_m710_description/robot/m710ic_45m.urdf.xacro
+
+- id: fanuc_m710ic_50
+  brand: FANUC
+  name: M-710iC/50
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m710_description
+  xacro: fanuc_m710_description/robot/m710ic_50.urdf.xacro
+
+- id: fanuc_m710ic_50e
+  brand: FANUC
+  name: M-710iC/50E
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m710_description
+  xacro: fanuc_m710_description/robot/m710ic_50e.urdf.xacro
+
+- id: fanuc_m710ic_50s
+  brand: FANUC
+  name: M-710iC/50S
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m710_description
+  xacro: fanuc_m710_description/robot/m710ic_50s.urdf.xacro
+
+- id: fanuc_m710ic_70
+  brand: FANUC
+  name: M-710iC/70
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m710_description
+  xacro: fanuc_m710_description/robot/m710ic_70.urdf.xacro
+
+- id: fanuc_m710id_50m
+  brand: FANUC
+  name: M-710iD/50M
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m710_description
+  xacro: fanuc_m710_description/robot/m710id_50m.urdf.xacro
+
+- id: fanuc_m710id_70
+  brand: FANUC
+  name: M-710iD/70
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m710_description
+  xacro: fanuc_m710_description/robot/m710id_70.urdf.xacro
+
+# M-800 series (very large)
+
+- id: fanuc_m800_60_20b
+  brand: FANUC
+  name: M-800/60-20B
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_m800_description
+  xacro: fanuc_m800_description/robot/m800_60_20b.urdf.xacro
+
+# Paint series
+
+- id: fanuc_p350ia_45_lh
+  brand: FANUC
+  name: P-350iA/45 (LH)
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_paint_description
+  xacro: fanuc_paint_description/robot/p350ia_45_lh.urdf.xacro
+
+- id: fanuc_p350ia_45_rh
+  brand: FANUC
+  name: P-350iA/45 (RH)
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_paint_description
+  xacro: fanuc_paint_description/robot/p350ia_45_rh.urdf.xacro
+
+# R-1000iA series (large)
+
+- id: fanuc_r1000ia_80f
+  brand: FANUC
+  name: R-1000iA/80F
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r1000ia_description
+  xacro: fanuc_r1000ia_description/robot/r1000ia_80f.urdf.xacro
+
+- id: fanuc_r1000ia_100f
+  brand: FANUC
+  name: R-1000iA/100F
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r1000ia_description
+  xacro: fanuc_r1000ia_description/robot/r1000ia_100f.urdf.xacro
+
+- id: fanuc_r1000ia_130f
+  brand: FANUC
+  name: R-1000iA/130F
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r1000ia_description
+  xacro: fanuc_r1000ia_description/robot/r1000ia_130f.urdf.xacro
+
+# R-2000 series (large/heavy)
+
+- id: fanuc_r2000ic_100p
+  brand: FANUC
+  name: R-2000iC/100P
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000ic_100p.urdf.xacro
+
+- id: fanuc_r2000ic_100ph
+  brand: FANUC
+  name: R-2000iC/100PH
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000ic_100ph.urdf.xacro
+
+- id: fanuc_r2000ic_125l
+  brand: FANUC
+  name: R-2000iC/125L
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000ic_125l.urdf.xacro
+
+- id: fanuc_r2000ic_165f
+  brand: FANUC
+  name: R-2000iC/165F
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000ic_165f.urdf.xacro
+
+- id: fanuc_r2000ic_165r
+  brand: FANUC
+  name: R-2000iC/165R
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000ic_165r.urdf.xacro
+
+- id: fanuc_r2000ic_190s
+  brand: FANUC
+  name: R-2000iC/190S
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000ic_190s.urdf.xacro
+
+- id: fanuc_r2000ic_190u
+  brand: FANUC
+  name: R-2000iC/190U
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000ic_190u.urdf.xacro
+
+- id: fanuc_r2000ic_210f
+  brand: FANUC
+  name: R-2000iC/210F
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000ic_210f.urdf.xacro
+
+- id: fanuc_r2000ic_210l
+  brand: FANUC
+  name: R-2000iC/210L
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000ic_210l.urdf.xacro
+
+- id: fanuc_r2000ic_210r
+  brand: FANUC
+  name: R-2000iC/210R
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000ic_210r.urdf.xacro
+
+- id: fanuc_r2000ic_210we
+  brand: FANUC
+  name: R-2000iC/210WE
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000ic_210we.urdf.xacro
+
+- id: fanuc_r2000ic_220u
+  brand: FANUC
+  name: R-2000iC/220U
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000ic_220u.urdf.xacro
+
+- id: fanuc_r2000ic_240f
+  brand: FANUC
+  name: R-2000iC/240F
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000ic_240f.urdf.xacro
+
+- id: fanuc_r2000ic_270f
+  brand: FANUC
+  name: R-2000iC/270F
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000ic_270f.urdf.xacro
+
+- id: fanuc_r2000ic_270r
+  brand: FANUC
+  name: R-2000iC/270R
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000ic_270r.urdf.xacro
+
+- id: fanuc_r2000id_100fh
+  brand: FANUC
+  name: R-2000iD/100FH
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000id_100fh.urdf.xacro
+
+- id: fanuc_r2000id_165fh
+  brand: FANUC
+  name: R-2000iD/165FH
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000id_165fh.urdf.xacro
+
+- id: fanuc_r2000id_210fh
+  brand: FANUC
+  name: R-2000iD/210FH
+  category: arm
+  tipLinks: [flange]
+  dof: 6
+  git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
+  package: fanuc_r2000_description
+  xacro: fanuc_r2000_description/robot/r2000id_210fh.urdf.xacro

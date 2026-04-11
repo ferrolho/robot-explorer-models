@@ -402,10 +402,15 @@ robots:
   name: Mini Cheetah
   category: quadruped
   tipLinks:
-  - shank_fr
-  - shank_fl
-  - shank_hr
-  - shank_hl
+  - toe_fr
+  - toe_fl
+  - toe_hr
+  - toe_hl
+  tipFrames:
+    toe_fr: { parent: shank_fr, xyz: "0 0 -0.18" }
+    toe_fl: { parent: shank_fl, xyz: "0 0 -0.18" }
+    toe_hr: { parent: shank_hr, xyz: "0 0 -0.18" }
+    toe_hl: { parent: shank_hl, xyz: "0 0 -0.18" }
 - id: minitaur
   module: minitaur_description
   brand: Ghost Robotics

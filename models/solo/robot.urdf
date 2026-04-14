@@ -1,0 +1,735 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="solo">
+  
+  <link name="base_link">
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="1.16115091" />
+      
+      <inertia ixx="0.00578574" ixy="0.0" ixz="0.0" iyy="0.01938108" iyz="0.0" izz="0.02476124" />
+    </inertial>
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_12_base.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_12_base.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    
+    <contact>
+      <lateral_friction value="1.0" />
+      <restitution value="0.5" />
+    </contact>
+  </link>
+  
+  <joint name="FL_HAA" type="revolute">
+    <parent link="base_link" />
+    <child link="FL_SHOULDER" />
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <axis xyz="1 0 0" />
+    <origin rpy="0 0 0" xyz="0.1946 0.0875 0" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="FL_SHOULDER">
+    
+    
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0.01950 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo12_hip_fe_fl.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0.01950 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo12_hip_fe_fl.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    <inertial>
+      <mass value="0.14853845" />
+      
+      <origin rpy="0 0 0" xyz="-0.07870700 0.01 0." />
+      <inertia ixx="0.00003024" ixy="0.00004671" ixz="0.0" iyy="0.00041193" iyz="0.0" izz="0.00041107" />
+    </inertial>
+  </link>
+  <joint name="FL_HFE" type="revolute">
+    <parent link="FL_SHOULDER" />
+    <child link="FL_UPPER_LEG" />
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <axis xyz="0 1 0" />
+    <origin rpy="0 0 0" xyz="0 0.014 0" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="FL_UPPER_LEG">
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00001377 0.01935853 -0.07870700" />
+      <mass value="0.14853845" />
+      <inertia ixx="0.00041107" ixy="0.0" ixz="0.0" iyy="0.00041193" iyz="0.00004671" izz="0.00003024" />
+    </inertial>
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_upper_leg_left_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_upper_leg_left_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    
+    <contact>
+      <lateral_friction value="1.0" />
+      <restitution value="0.5" />
+    </contact>
+  </link>
+  
+  
+  <joint name="FL_KFE" type="revolute">
+    <parent link="FL_UPPER_LEG" />
+    <child link="FL_LOWER_LEG" />
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <axis xyz="0 1 0" />
+    <origin rpy="0 0 0" xyz="0 0.03745 -0.16" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="FL_LOWER_LEG">
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.00787644 -0.08928215" />
+      <mass value="0.03070001" />
+      <inertia ixx="0.00012024" ixy="0.0" ixz="0.0" iyy="0.00012029" iyz="0.00000305" izz="0.00000216" />
+    </inertial>
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_lower_leg_left_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_lower_leg_left_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    
+    <contact>
+      <lateral_friction value="1.0" />
+      <restitution value="0.5" />
+    </contact>
+  </link>
+  
+  
+  <joint name="FL_ANKLE" type="fixed">
+    <parent link="FL_LOWER_LEG" />
+    <child link="FL_FOOT" />
+    <origin rpy="0 0 0" xyz="0 0.008 -0.16" />
+    
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="FL_FOOT">
+    
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.00035767" />
+      <mass value="0.00693606" />
+      <inertia ixx="0.00000057" ixy="0.0" ixz="0.0" iyy="0.00000084" iyz="0.0" izz="0.00000053" />
+    </inertial>
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_foot.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_foot.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    
+    <contact>
+      <lateral_friction value="1.0" />
+      <restitution value="0.5" />
+    </contact>
+  </link>
+  
+  <joint name="FR_HAA" type="revolute">
+    <parent link="base_link" />
+    <child link="FR_SHOULDER" />
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <axis xyz="1 0 0" />
+    <origin rpy="0 0 0" xyz="0.1946 -0.0875 0" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="FR_SHOULDER">
+    
+    
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0.01950 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo12_hip_fe_fr.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0.01950 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo12_hip_fe_fr.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    <inertial>
+      <mass value="0.14853845" />
+      
+      <origin rpy="0 0 0" xyz="-0.07870700 -0.01 0." />
+      <inertia ixx="0.00003024" ixy="-0.00004671" ixz="0.0" iyy="0.00041193" iyz="0.0" izz="0.00041107" />
+    </inertial>
+  </link>
+  <joint name="FR_HFE" type="revolute">
+    <parent link="FR_SHOULDER" />
+    <child link="FR_UPPER_LEG" />
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <axis xyz="0 1 0" />
+    <origin rpy="0 0 0" xyz="0 -0.014 0" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="FR_UPPER_LEG">
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00001377 -0.01935853 -0.07870700" />
+      <mass value="0.14853845" />
+      <inertia ixx="0.00041107" ixy="0.0" ixz="0.0" iyy="0.00041193" iyz="-0.00004671" izz="0.00003024" />
+    </inertial>
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_upper_leg_right_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_upper_leg_right_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    
+    <contact>
+      <lateral_friction value="1.0" />
+      <restitution value="0.5" />
+    </contact>
+  </link>
+  
+  
+  <joint name="FR_KFE" type="revolute">
+    <parent link="FR_UPPER_LEG" />
+    <child link="FR_LOWER_LEG" />
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <axis xyz="0 1 0" />
+    <origin rpy="0 0 0" xyz="0 -0.03745 -0.16" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="FR_LOWER_LEG">
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.00787644 -0.08928215" />
+      <mass value="0.03070001" />
+      <inertia ixx="0.00012024" ixy="0.0" ixz="0.0" iyy="0.00012029" iyz="-0.00000305" izz="0.00000216" />
+    </inertial>
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_lower_leg_right_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_lower_leg_right_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    
+    <contact>
+      <lateral_friction value="1.0" />
+      <restitution value="0.5" />
+    </contact>
+  </link>
+  
+  
+  <joint name="FR_ANKLE" type="fixed">
+    <parent link="FR_LOWER_LEG" />
+    <child link="FR_FOOT" />
+    <origin rpy="0 0 0" xyz="0 -0.008 -0.16" />
+    
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="FR_FOOT">
+    
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.00035767" />
+      <mass value="0.00693606" />
+      <inertia ixx="0.00000057" ixy="0.0" ixz="0.0" iyy="0.00000084" iyz="0.0" izz="0.00000053" />
+    </inertial>
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_foot.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_foot.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    
+    <contact>
+      <lateral_friction value="1.0" />
+      <restitution value="0.5" />
+    </contact>
+  </link>
+  
+  <joint name="HL_HAA" type="revolute">
+    <parent link="base_link" />
+    <child link="HL_SHOULDER" />
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <axis xyz="1 0 0" />
+    <origin rpy="0 0 0" xyz="-0.1946 0.0875 0" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="HL_SHOULDER">
+    
+    
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.01950 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo12_hip_fe_hl.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.01950 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo12_hip_fe_hl.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    <inertial>
+      <mass value="0.14853845" />
+      
+      <origin rpy="0 0 0" xyz="0.07870700 0.01 0." />
+      <inertia ixx="0.00003024" ixy="0.00004671" ixz="0.0" iyy="0.00041193" iyz="0.0" izz="0.00041107" />
+    </inertial>
+  </link>
+  <joint name="HL_HFE" type="revolute">
+    <parent link="HL_SHOULDER" />
+    <child link="HL_UPPER_LEG" />
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <axis xyz="0 1 0" />
+    <origin rpy="0 0 0" xyz="0 0.014 0" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="HL_UPPER_LEG">
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00001377 0.01935853 -0.07870700" />
+      <mass value="0.14853845" />
+      <inertia ixx="0.00041107" ixy="0.0" ixz="0.0" iyy="0.00041193" iyz="0.00004671" izz="0.00003024" />
+    </inertial>
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_upper_leg_left_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_upper_leg_left_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    
+    <contact>
+      <lateral_friction value="1.0" />
+      <restitution value="0.5" />
+    </contact>
+  </link>
+  
+  
+  <joint name="HL_KFE" type="revolute">
+    <parent link="HL_UPPER_LEG" />
+    <child link="HL_LOWER_LEG" />
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <axis xyz="0 1 0" />
+    <origin rpy="0 0 0" xyz="0 0.03745 -0.16" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="HL_LOWER_LEG">
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.00787644 -0.08928215" />
+      <mass value="0.03070001" />
+      <inertia ixx="0.00012024" ixy="0.0" ixz="0.0" iyy="0.00012029" iyz="0.00000305" izz="0.00000216" />
+    </inertial>
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_lower_leg_left_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_lower_leg_left_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    
+    <contact>
+      <lateral_friction value="1.0" />
+      <restitution value="0.5" />
+    </contact>
+  </link>
+  
+  
+  <joint name="HL_ANKLE" type="fixed">
+    <parent link="HL_LOWER_LEG" />
+    <child link="HL_FOOT" />
+    <origin rpy="0 0 0" xyz="0 0.008 -0.16" />
+    
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="HL_FOOT">
+    
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.00035767" />
+      <mass value="0.00693606" />
+      <inertia ixx="0.00000057" ixy="0.0" ixz="0.0" iyy="0.00000084" iyz="0.0" izz="0.00000053" />
+    </inertial>
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_foot.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_foot.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    
+    <contact>
+      <lateral_friction value="1.0" />
+      <restitution value="0.5" />
+    </contact>
+  </link>
+  
+  <joint name="HR_HAA" type="revolute">
+    <parent link="base_link" />
+    <child link="HR_SHOULDER" />
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <axis xyz="1 0 0" />
+    <origin rpy="0 0 0" xyz="-0.1946 -0.0875 0" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="HR_SHOULDER">
+    
+    
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.01950 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo12_hip_fe_hr.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.01950 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo12_hip_fe_hr.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    <inertial>
+      <mass value="0.14853845" />
+      
+      <origin rpy="0 0 0" xyz="0.07870700 -0.01 0." />
+      <inertia ixx="0.00003024" ixy="-0.00004671" ixz="0.0" iyy="0.00041193" iyz="0.0" izz="0.00041107" />
+    </inertial>
+  </link>
+  <joint name="HR_HFE" type="revolute">
+    <parent link="HR_SHOULDER" />
+    <child link="HR_UPPER_LEG" />
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <axis xyz="0 1 0" />
+    <origin rpy="0 0 0" xyz="0 -0.014 0" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="HR_UPPER_LEG">
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00001377 -0.01935853 -0.07870700" />
+      <mass value="0.14853845" />
+      <inertia ixx="0.00041107" ixy="0.0" ixz="0.0" iyy="0.00041193" iyz="-0.00004671" izz="0.00003024" />
+    </inertial>
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_upper_leg_right_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_upper_leg_right_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    
+    <contact>
+      <lateral_friction value="1.0" />
+      <restitution value="0.5" />
+    </contact>
+  </link>
+  
+  
+  <joint name="HR_KFE" type="revolute">
+    <parent link="HR_UPPER_LEG" />
+    <child link="HR_LOWER_LEG" />
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <axis xyz="0 1 0" />
+    <origin rpy="0 0 0" xyz="0 -0.03745 -0.16" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="HR_LOWER_LEG">
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.00787644 -0.08928215" />
+      <mass value="0.03070001" />
+      <inertia ixx="0.00012024" ixy="0.0" ixz="0.0" iyy="0.00012029" iyz="-0.00000305" izz="0.00000216" />
+    </inertial>
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_lower_leg_right_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_lower_leg_right_side.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    
+    <contact>
+      <lateral_friction value="1.0" />
+      <restitution value="0.5" />
+    </contact>
+  </link>
+  
+  
+  <joint name="HR_ANKLE" type="fixed">
+    <parent link="HR_LOWER_LEG" />
+    <child link="HR_FOOT" />
+    <origin rpy="0 0 0" xyz="0 -0.008 -0.16" />
+    
+    <limit effort="1000" lower="-10" upper="10" velocity="1000" />
+    
+    <dynamics damping="0.0" friction="0.0" />
+  </joint>
+  <link name="HR_FOOT">
+    
+    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.00035767" />
+      <mass value="0.00693606" />
+      <inertia ixx="0.00000057" ixy="0.0" ixz="0.0" iyy="0.00000084" iyz="0.0" izz="0.00000053" />
+    </inertial>
+    
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_foot.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </visual>
+    
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/solo_foot.stl" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.8 0.8 0.8 1.0" />
+      </material>
+    </collision>
+    
+    <contact>
+      <lateral_friction value="1.0" />
+      <restitution value="0.5" />
+    </contact>
+  </link>
+  
+</robot>

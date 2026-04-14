@@ -74,13 +74,15 @@ def stop_xacro_container() -> None:
     )
 
 
-def render_xacro(repo_dir: Path, xacro_rel_path: str, output_path: Path) -> bool:
+def render_xacro(repo_dir: Path, xacro_rel_path: str, output_path: Path,
+                  xacro_args: dict[str, str] | None = None) -> bool:
     """Render a xacro file to URDF using the persistent Docker container."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    result = subprocess.run(
-        [str(ROOT / "scripts" / "render_xacro.sh"), "render", str(repo_dir), xacro_rel_path, str(output_path)],
-        capture_output=True, text=True,
-    )
+    args_str = " ".join(f"{k}:={v}" for k, v in xacro_args.items()) if xacro_args else ""
+    cmd = [str(ROOT / "scripts" / "render_xacro.sh"), "render", str(repo_dir), xacro_rel_path, str(output_path)]
+    if args_str:
+        cmd.append(args_str)
+    result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
         print(f"  ERROR: xacro rendering failed: {result.stderr[:200]}")
         return False
@@ -268,9 +270,12 @@ def process_robot(robot: dict) -> dict | None:
         if "xacro" in robot:
             # Render xacro via Docker
             xacro_rel = robot["xacro"]
+            xacro_args = robot.get("xacro_args")
             print(f"  Xacro: {xacro_rel}")
+            if xacro_args:
+                print(f"  Xacro args: {xacro_args}")
             tmp_urdf = DIST / "tmp" / f"{robot_id}.urdf"
-            if not render_xacro(repo_path, xacro_rel, tmp_urdf):
+            if not render_xacro(repo_path, xacro_rel, tmp_urdf, xacro_args):
                 return None
             urdf_path = tmp_urdf
         elif "urdf" in robot:

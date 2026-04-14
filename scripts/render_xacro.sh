@@ -2,9 +2,9 @@
 # Manage a persistent Docker container for xacro rendering.
 #
 # Usage:
-#   render_xacro.sh start                                  — build image + start container
-#   render_xacro.sh render <repo_dir> <xacro_file> <out>   — render a xacro file to URDF
-#   render_xacro.sh stop                                   — stop + remove container
+#   render_xacro.sh start                                              — build image + start container
+#   render_xacro.sh render <repo_dir> <xacro_file> <out> [xacro_args]  — render a xacro file to URDF
+#   render_xacro.sh stop                                               — stop + remove container
 
 set -e
 
@@ -39,9 +39,10 @@ case "${1:-}" in
     REPO_DIR="$2"
     XACRO_FILE="$3"
     OUTPUT_URDF="$4"
+    XACRO_ARGS="${5:-}"
 
     if [ -z "$REPO_DIR" ] || [ -z "$XACRO_FILE" ] || [ -z "$OUTPUT_URDF" ]; then
-      echo "Usage: $0 render <repo_dir> <xacro_file> <output_urdf>" >&2
+      echo "Usage: $0 render <repo_dir> <xacro_file> <output_urdf> [xacro_args]" >&2
       exit 1
     fi
 
@@ -53,7 +54,7 @@ case "${1:-}" in
     docker exec "$CONTAINER_NAME" bash -c "
       source /opt/ros/noetic/setup.bash
       export ROS_PACKAGE_PATH=$CONTAINER_REPO
-      xacro $CONTAINER_REPO/$XACRO_FILE
+      xacro $CONTAINER_REPO/$XACRO_FILE $XACRO_ARGS
     " > "$OUTPUT_URDF"
     ;;
 

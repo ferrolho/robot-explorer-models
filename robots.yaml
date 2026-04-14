@@ -1,4 +1,4 @@
-# Robot catalog — 157 robots
+# Robot catalog — 173 robots
 # Sources: robot_descriptions.py, ros-industrial, FANUC-CORPORATION
 
 robots:
@@ -853,9 +853,67 @@ robots:
 
 # ── ABB (from ros-industrial/abb, xacro-based) ──
 
+# GoFa collaborative robots
+
+- id: abb_crb15000_5
+  brand: ABB
+  name: GoFa CRB 15000-5/0.95
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 0.95
+  weight: 27
+  payload: 5
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_crb15000_support
+  xacro: abb_crb15000_support/urdf/crb15000_5_95.xacro
+
+- id: abb_crb15000_12
+  brand: ABB
+  name: GoFa CRB 15000-12/1.27
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 1.27
+  weight: 48
+  payload: 12
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_crb15000_support
+  xacro: abb_crb15000_support/urdf/crb15000_12_127.xacro
+
+# IRB 52 (paint)
+
+- id: abb_irb52_120
+  brand: ABB
+  name: IRB 52-7/1.2
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 1.2
+  weight: 180
+  payload: 7
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb52_support
+  xacro: abb_irb52_support/urdf/irb52_7_120.xacro
+
+- id: abb_irb52_145
+  brand: ABB
+  name: IRB 52-7/1.45
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 1.45
+  weight: 250
+  payload: 7
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb52_support
+  xacro: abb_irb52_support/urdf/irb52_7_145.xacro
+
+# IRB 120
+
 - id: abb_irb120
   brand: ABB
-  name: IRB 120-3/0.6
+  name: IRB 120-3/0.58
   category: arm
   tipLinks: [tool0]
   dof: 6
@@ -866,20 +924,50 @@ robots:
   package: abb_irb120_support
   xacro: abb_irb120_support/urdf/irb120_3_58.xacro
 
-- id: abb_irb1200
+- id: abb_irb120t
+  brand: ABB
+  name: IRB 120T-3/0.58
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 0.58
+  weight: 25
+  payload: 3
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb120_support
+  xacro: abb_irb120_support/urdf/irb120t_3_58.xacro
+
+# IRB 1200
+
+- id: abb_irb1200_5
   brand: ABB
   name: IRB 1200-5/0.9
   category: arm
   tipLinks: [tool0]
   dof: 6
-  reach: 0.901
+  reach: 0.9
   weight: 54
   payload: 5
   git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
   package: abb_irb1200_support
   xacro: abb_irb1200_support/urdf/irb1200_5_90.xacro
 
-- id: abb_irb1600
+- id: abb_irb1200_7
+  brand: ABB
+  name: IRB 1200-7/0.7
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 0.7
+  weight: 54
+  payload: 7
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb1200_support
+  xacro: abb_irb1200_support/urdf/irb1200_7_70.xacro
+
+# IRB 1600
+
+- id: abb_irb1600_6
   brand: ABB
   name: IRB 1600-6/1.2
   category: arm
@@ -892,9 +980,37 @@ robots:
   package: abb_irb1600_support
   xacro: abb_irb1600_support/urdf/irb1600_6_12.xacro
 
+- id: abb_irb1600_8
+  brand: ABB
+  name: IRB 1600-8/1.45
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 1.45
+  weight: 250
+  payload: 8
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb1600_support
+  xacro: abb_irb1600_support/urdf/irb1600_8_145.xacro
+
+- id: abb_irb1600_10
+  brand: ABB
+  name: IRB 1600-10/1.45
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 1.45
+  weight: 250
+  payload: 10
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb1600_support
+  xacro: abb_irb1600_support/urdf/irb1600_10_145.xacro
+
+# IRB 2400
+
 - id: abb_irb2400
   brand: ABB
-  name: IRB 2400/10
+  name: IRB 2400-12/1.55
   category: arm
   tipLinks: [tool0]
   dof: 6
@@ -905,7 +1021,9 @@ robots:
   package: abb_irb2400_support
   xacro: abb_irb2400_support/urdf/irb2400_12_155.xacro
 
-- id: abb_irb2600
+# IRB 2600
+
+- id: abb_irb2600_165
   brand: ABB
   name: IRB 2600-12/1.65
   category: arm
@@ -918,20 +1036,63 @@ robots:
   package: abb_irb2600_support
   xacro: abb_irb2600_support/urdf/irb2600_12_165.xacro
 
-- id: abb_irb4400
+- id: abb_irb2600_185
   brand: ABB
-  name: IRB 4400L/10
+  name: IRB 2600-12/1.85
   category: arm
   tipLinks: [tool0]
   dof: 6
-  reach: 2.53
+  reach: 1.85
+  weight: 284
+  payload: 12
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb2600_support
+  xacro: abb_irb2600_support/urdf/irb2600_12_185.xacro
+
+# IRB 4400
+
+- id: abb_irb4400
+  brand: ABB
+  name: IRB 4400L-30/2.43
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 2.43
   weight: 1040
-  payload: 10
+  payload: 30
   git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
   package: abb_irb4400_support
   xacro: abb_irb4400_support/urdf/irb4400l_30_243.xacro
 
-- id: abb_irb4600
+# IRB 4600
+
+- id: abb_irb4600_20
+  brand: ABB
+  name: IRB 4600-20/2.5
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 2.5
+  weight: 412
+  payload: 20
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb4600_support
+  xacro: abb_irb4600_support/urdf/irb4600_20_250.xacro
+
+- id: abb_irb4600_40
+  brand: ABB
+  name: IRB 4600-40/2.55
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 2.55
+  weight: 465
+  payload: 40
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb4600_support
+  xacro: abb_irb4600_support/urdf/irb4600_40_255.xacro
+
+- id: abb_irb4600_60
   brand: ABB
   name: IRB 4600-60/2.05
   category: arm
@@ -943,6 +1104,8 @@ robots:
   git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
   package: abb_irb4600_support
   xacro: abb_irb4600_support/urdf/irb4600_60_205.xacro
+
+# IRB 5400
 
 - id: abb_irb5400
   brand: ABB
@@ -957,18 +1120,93 @@ robots:
   package: abb_irb5400_support
   xacro: abb_irb5400_support/urdf/irb5400.xacro
 
-- id: abb_irb6640
+# IRB 6600
+
+- id: abb_irb6600
   brand: ABB
-  name: IRB 6640-235
+  name: IRB 6600-225/2.55
   category: arm
   tipLinks: [tool0]
-  dof: 6
+  dof: 8
   reach: 2.55
+  weight: 2495
+  payload: 225
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb6600_support
+  xacro: abb_irb6600_support/urdf/irb6600_225_255.xacro
+
+# IRB 6640
+
+- id: abb_irb6640
+  brand: ABB
+  name: IRB 6640-185/2.8
+  category: arm
+  tipLinks: [tool0]
+  dof: 8
+  reach: 2.8
   weight: 1310
-  payload: 235
+  payload: 185
   git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
   package: abb_irb6640_support
   xacro: abb_irb6640_support/urdf/irb6640_185_280.xacro
+
+# IRB 6650S
+
+- id: abb_irb6650s_90
+  brand: ABB
+  name: IRB 6650S-90/3.9
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 3.9
+  weight: 2275
+  payload: 90
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb6650s_support
+  xacro: abb_irb6650s_support/urdf/irb6650s_90_390.xacro
+
+- id: abb_irb6650s_125
+  brand: ABB
+  name: IRB 6650S-125/3.5
+  category: arm
+  tipLinks: [tool0]
+  dof: 6
+  reach: 3.5
+  weight: 2250
+  payload: 125
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb6650s_support
+  xacro: abb_irb6650s_support/urdf/irb6650s_125_350.xacro
+
+# IRB 6700
+
+- id: abb_irb6700_200
+  brand: ABB
+  name: IRB 6700-200/2.6
+  category: arm
+  tipLinks: [tool0]
+  dof: 8
+  reach: 2.6
+  weight: 1280
+  payload: 200
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb6700_support
+  xacro: abb_irb6700_support/urdf/irb6700_200_260.xacro
+
+- id: abb_irb6700_235
+  brand: ABB
+  name: IRB 6700-235/2.65
+  category: arm
+  tipLinks: [tool0]
+  dof: 8
+  reach: 2.65
+  weight: 1280
+  payload: 235
+  git_repo: {url: "https://github.com/ros-industrial/abb.git", branch: noetic-devel, name: abb}
+  package: abb_irb6700_support
+  xacro: abb_irb6700_support/urdf/irb6700_235_265.xacro
+
+# IRB 7600
 
 - id: abb_irb7600
   brand: ABB

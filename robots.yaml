@@ -2014,3 +2014,18 @@ robots:
   git_repo: {url: "https://github.com/FANUC-CORPORATION/fanuc_description.git", branch: main, name: fanuc_description}
   package: fanuc_r2000_description
   xacro: fanuc_r2000_description/robot/r2000id_210fh.urdf.xacro
+
+# ── Wuji Technology (dexterous hand, plain URDF + STL) ──
+
+- id: wuji_hand
+  brand: Wuji
+  name: Wuji Hand
+  category: hand
+  tipLinks:
+  - right_finger1_tip_link
+  - right_finger2_tip_link
+  - right_finger3_tip_link
+  - right_finger4_tip_link
+  - right_finger5_tip_link
+  git_repo: {url: "https://github.com/wuji-technology/wuji-hand-description.git", branch: main, name: wuji_hand_description}
+  urdf: urdf/right.urdf
